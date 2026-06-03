@@ -43,16 +43,16 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${headerBg}`}
     >
-      <div className="flex items-center justify-between px-5 py-5 sm:px-8">
-        {!isHome ? (
+      <div
+        className={`flex items-center px-5 py-5 sm:px-8 ${isHome ? "justify-end" : "justify-between"}`}
+      >
+        {!isHome && (
           <Link
             href="/"
             className="text-sm font-bold tracking-tight text-white transition-opacity hover:opacity-70"
           >
             {site.name}
           </Link>
-        ) : (
-          <span className="w-px" aria-hidden />
         )}
 
         <nav className="hidden gap-8 sm:flex">

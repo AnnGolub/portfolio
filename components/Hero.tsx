@@ -6,7 +6,7 @@ import { TypewriterText } from "@/components/TypewriterText";
 import { site } from "@/data/site";
 
 export function Hero() {
-  const bgRef = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -20,41 +20,38 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative flex min-h-[100dvh] flex-col overflow-hidden">
-      <div
+    <section className="relative min-h-[100dvh] overflow-hidden">
+      <img
         ref={bgRef}
-        className="absolute inset-0 -top-[10%] h-[120%] w-full will-change-transform"
-        style={{
-          backgroundImage: "url(/photo.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        src="/photo.jpg"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover object-[50%_15%] will-change-transform md:object-[50%_20%]"
         aria-hidden
       />
+
       <div
-        className="absolute inset-0 bg-[rgba(0,0,0,0.4)]"
+        className="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.85)]"
         aria-hidden
       />
 
-      <div className="relative z-10 flex min-h-[100dvh] flex-1 flex-col px-5 pb-10 pt-24 sm:px-8 sm:pb-14 sm:pt-28">
-        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
-          {site.name}
-        </h1>
-
+      <div className="relative z-10 flex min-h-[100dvh] flex-col justify-end px-5 pb-28 pt-24 sm:px-8 sm:pb-32">
         <TypewriterText
           text={site.tagline}
           speed={50}
-          className="mx-auto my-auto max-w-md text-center text-base leading-relaxed text-white/90 sm:max-w-xl sm:text-lg md:text-xl"
+          className="mb-4 max-w-md text-left text-lg leading-relaxed text-white"
         />
+        <h1 className="text-5xl font-bold tracking-tight text-white md:text-8xl">
+          {site.name}
+        </h1>
+      </div>
 
-        <div className="flex justify-center pb-4 sm:pb-8">
-          <Link
-            href="#work"
-            className="rounded-full border border-white/30 bg-white/10 px-8 py-3.5 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20"
-          >
-            View work
-          </Link>
-        </div>
+      <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center px-5 sm:bottom-8">
+        <Link
+          href="#work"
+          className="rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
+        >
+          View work
+        </Link>
       </div>
     </section>
   );

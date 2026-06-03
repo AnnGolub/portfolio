@@ -56,7 +56,7 @@ export function TypewriterText({
       <span>{text.slice(0, charIndex)}</span>
       {showCursor && (
         <span
-          className={`ml-0.5 inline-block h-[1em] w-0.5 translate-y-px align-middle bg-white ${
+          className={`ml-0.5 inline-block h-[1em] w-0.5 translate-y-px align-middle bg-current ${
             isComplete ? "" : "animate-cursor-blink"
           }`}
           style={isComplete ? { opacity: cursorOn ? 1 : 0 } : undefined}
