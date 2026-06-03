@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CaseStudyContent } from "@/components/CaseStudyContent";
 import { getAllSlugs, getCaseBySlug } from "@/lib/cases";
 
 type PageProps = {
@@ -30,7 +31,7 @@ export default function CaseStudyPage({ params }: PageProps) {
   }
 
   return (
-    <article className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-6 sm:pt-16 sm:pb-28">
+    <article className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-6 sm:pt-16 sm:pb-28 lg:max-w-[44rem]">
       <Link
         href="/work"
         className="text-sm text-white/50 transition-colors hover:text-white"
@@ -54,11 +55,7 @@ export default function CaseStudyPage({ params }: PageProps) {
         </ul>
       </header>
 
-      <div className="prose-case mt-10 sm:mt-12">
-        <p className="text-base leading-relaxed text-white/80 sm:text-lg sm:leading-relaxed">
-          {caseStudy.content}
-        </p>
-      </div>
+      <CaseStudyContent content={caseStudy.content} />
     </article>
   );
 }

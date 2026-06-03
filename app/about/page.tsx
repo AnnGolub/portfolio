@@ -8,45 +8,57 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-6 sm:pt-16 sm:pb-28">
-      <header>
-        <h1 className="text-2xl font-medium tracking-tight text-white sm:text-3xl">
-          About
-        </h1>
-      </header>
+    <div className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-6 sm:pt-16 sm:pb-28 lg:max-w-[44rem]">
+      <h1 className="sr-only">{site.name}</h1>
 
-      <div className="mt-8 space-y-6 text-base leading-relaxed text-white/70 sm:mt-10 sm:text-lg sm:leading-relaxed">
+      <img
+        src="/photo.jpg"
+        alt="Anna Golubeva"
+        width={256}
+        height={256}
+        className="h-64 w-64 rounded-full object-cover"
+      />
+
+      <div className="mt-10 space-y-6 text-base leading-[1.85] text-white/70 sm:mt-12 sm:text-lg sm:leading-[1.9]">
         <p>
-          I&apos;m a senior product designer at Alfa-Bank, working on fintech
-          products used by millions of customers—from new digital sales channels
-          to core banking flows.
+          I grew up in Saint Petersburg and trained as a ballet dancer before
+          finding my way into product design. Turns out choreography and UX have
+          more in common than you&apos;d think — both are about guiding people
+          through an experience without them noticing the work behind it.
         </p>
         <p>
-          Alongside product work, I build design operations: frameworks and
-          rituals that help large design teams ship with consistency. I&apos;m
-          currently exploring what comes next.
+          5+ years in IT, the last 3 at Alfa-Bank as a Senior Product Designer.
+          I work on products used by millions and on the processes that make
+          design teams function.
         </p>
+        <p>Now based in Barcelona, looking for the next stage.</p>
       </div>
 
-      <section className="mt-14 border-t border-white/10 pt-10 sm:mt-16 sm:pt-12">
+      <section className="mt-12 border-t border-white/10 pt-10 sm:mt-14 sm:pt-12">
         <h2 className="text-sm font-medium text-white/40">Contact</h2>
-        <ul className="mt-4 space-y-3 text-base sm:text-lg">
+        <ul className="mt-6 space-y-5">
           <li>
+            <span className="block text-xs font-medium uppercase tracking-wide text-white/40">
+              Email
+            </span>
             <a
-              href="mailto:hello@annagolubeva.com"
-              className="text-white/80 transition-colors hover:text-white"
+              href="mailto:anka.golub17@gmail.com"
+              className="mt-2 inline-block text-base text-white underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white sm:text-lg"
             >
-              hello@annagolubeva.com
+              anka.golub17@gmail.com
             </a>
           </li>
           <li>
+            <span className="block text-xs font-medium uppercase tracking-wide text-white/40">
+              LinkedIn
+            </span>
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/anna-golubeva-9063b9237/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/80 transition-colors hover:text-white"
+              className="mt-2 inline-block text-base text-white underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white sm:text-lg"
             >
-              LinkedIn
+              linkedin.com/in/anna-golubeva-9063b9237
             </a>
           </li>
         </ul>
