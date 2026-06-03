@@ -20,9 +20,12 @@ export const cases: CaseStudy[] = [
       "Designing a new digital sales channel for precious metals from zero",
     tags: ["Product Design", "E-commerce", "Fintech"],
     stats: [
-      { value: "2", label: "storefronts" },
-      { value: "38+", label: "SKUs" },
-      { value: "2", label: "months" },
+      { value: "113.6M ₽", label: "Bars revenue in 2 months" },
+      { value: "102M ₽", label: "Coins revenue in 2 months" },
+      { value: "9,652 g", label: "Bars sold, 40% from website" },
+      { value: "733", label: "Coins sold, 40% from website" },
+      { value: "2", label: "Storefronts launched" },
+      { value: "2 mo", label: "From zero to production" },
     ],
     content: `Role: Lead Product Designer (solo). Team: Analyst, Backend Engineer, Frontend Engineer, QA. Timeline: September 2025 – present. Live: alfabank.ru/make-money/metall/
 
@@ -93,9 +96,12 @@ Framework adopted across all 15 product teams. Used as primary onboarding materi
       "Iterative redesign of a debit card application flow with cross-sell basket",
     tags: ["Product Design", "Fintech", "Research"],
     stats: [
-      { value: "10%", label: "engagement" },
-      { value: "3 min", label: "saved" },
-      { value: "43%", label: "A/B traffic" },
+      { value: "19.4%", label: "CR1 (plan was 15%) ✓" },
+      { value: "81%", label: "CR2 (plan was 79%) ✓" },
+      { value: "10%", label: "Users engage with basket" },
+      { value: "3 min", label: "Saved per courier meeting" },
+      { value: "648K", label: "Cashback package traffic" },
+      { value: "24,345", label: "Cashback package orders" },
     ],
     content: `Role: Product Designer. Team: Designer, Motional Designer, Researcher, Analyst, Marketing, Editor, Frontend/Backend, QA. Timeline: September 2023 – 2025. Status: Live on production (mobile + desktop).
 

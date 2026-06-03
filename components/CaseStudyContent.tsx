@@ -1,4 +1,6 @@
 import { CaseStudyMeta } from "@/components/CaseStudyMeta";
+import { CaseStudyStats } from "@/components/CaseStudyStats";
+import type { CaseStat } from "@/data/cases";
 import {
   parseCaseContent,
   splitSectionParagraphs,
@@ -6,9 +8,10 @@ import {
 
 type CaseStudyContentProps = {
   content: string;
+  stats: CaseStat[];
 };
 
-export function CaseStudyContent({ content }: CaseStudyContentProps) {
+export function CaseStudyContent({ content, stats }: CaseStudyContentProps) {
   const { meta, sections } = parseCaseContent(content);
 
   return (
@@ -19,7 +22,13 @@ export function CaseStudyContent({ content }: CaseStudyContentProps) {
         </section>
       )}
 
-      <div className={meta.length > 0 ? "mt-10 sm:mt-14" : undefined}>
+      <CaseStudyStats stats={stats} />
+
+      <div
+        className={
+          meta.length > 0 || stats.length > 0 ? "mt-10 sm:mt-14" : undefined
+        }
+      >
         {sections.map((section, index) => (
           <section
             key={section.title}

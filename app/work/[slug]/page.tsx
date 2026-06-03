@@ -59,21 +59,9 @@ export default function CaseStudyPage({ params }: PageProps) {
             </li>
           ))}
         </ul>
-        <ul className="mt-8 flex flex-wrap gap-8 border-t border-white/10 pt-8">
-          {caseStudy.stats.map((stat) => (
-            <li key={stat.label}>
-              <p className="text-2xl font-bold text-white sm:text-3xl">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.15em] text-white/40">
-                {stat.label}
-              </p>
-            </li>
-          ))}
-        </ul>
       </header>
 
-      <CaseStudyContent content={caseStudy.content} />
+      <CaseStudyContent content={caseStudy.content} stats={caseStudy.stats} />
     </PageShell>
   );
 }

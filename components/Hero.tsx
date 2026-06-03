@@ -4,11 +4,11 @@ import { site } from "@/data/site";
 
 export function Hero() {
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-screen overflow-hidden bg-[#0a0a0a]">
       <img
         src="/photo.jpg"
         alt=""
-        className="absolute inset-0 h-full w-full object-cover object-[50%_15%] md:object-[50%_20%]"
+        className="absolute inset-0 h-full w-full object-cover object-[50%_15%] md:origin-[50%_10%] md:scale-[0.8] md:object-[50%_10%]"
         aria-hidden
       />
 

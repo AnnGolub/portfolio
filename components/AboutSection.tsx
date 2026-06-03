@@ -10,15 +10,7 @@ export function AboutSection() {
       <div className="mx-auto max-w-6xl lg:max-w-[44rem]">
         <SectionLabel>About</SectionLabel>
 
-        <img
-          src="/photo.jpg"
-          alt="Anna Golubeva"
-          width={256}
-          height={256}
-          className="mt-8 h-64 w-64 rounded-full object-cover"
-        />
-
-        <div className="mt-10 space-y-6 text-base leading-[1.85] text-white/70 sm:mt-12 sm:text-lg sm:leading-[1.9]">
+        <div className="mt-8 space-y-6 text-base leading-[1.85] text-white/70 sm:mt-10 sm:text-lg sm:leading-[1.9]">
           <p>
             I grew up in Saint Petersburg and trained as a ballet dancer before
             finding my way into product design. Turns out choreography and UX

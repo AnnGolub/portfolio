@@ -15,7 +15,7 @@ export function CaseStudyMeta({ items }: CaseStudyMetaProps) {
   ];
 
   return (
-    <dl className="grid grid-cols-1 gap-x-10 gap-y-6 border-b border-white/10 pb-10 sm:grid-cols-2 sm:gap-y-8 sm:pb-12">
+    <dl className="grid grid-cols-1 gap-x-10 gap-y-6 pb-10 sm:grid-cols-2 sm:gap-y-8 sm:pb-12">
       {sorted.map((item) => (
         <div key={item.label}>
           <dt className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40">
