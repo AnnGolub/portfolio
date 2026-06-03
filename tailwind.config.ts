@@ -11,6 +11,11 @@ const config: Config = {
       colors: {
         background: "#0a0a0a",
         foreground: "#ffffff",
+        surface: {
+          1: "#0f0f0f",
+          2: "#141414",
+          3: "#1a1a1a",
+        },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

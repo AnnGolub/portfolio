@@ -5,6 +5,13 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ffffff;
+  --surface-1: #0f0f0f;
+  --surface-2: #141414;
+  --surface-3: #1a1a1a;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -15,5 +22,29 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .animate-cursor-blink {
+    animation: cursor-blink 1s step-end infinite;
+  }
+}
+
+@keyframes cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
   }
 }

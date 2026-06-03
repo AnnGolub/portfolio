@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { PageShell } from "@/components/PageShell";
+import { SectionLabel } from "@/components/SectionLabel";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -8,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl px-5 pb-20 pt-12 sm:px-6 sm:pt-16 sm:pb-28 lg:max-w-[44rem]">
+    <PageShell tone="surface">
       <h1 className="sr-only">{site.name}</h1>
 
       <img
@@ -35,34 +37,34 @@ export default function AboutPage() {
       </div>
 
       <section className="mt-12 border-t border-white/10 pt-10 sm:mt-14 sm:pt-12">
-        <h2 className="text-sm font-medium text-white/40">Contact</h2>
+        <SectionLabel>Contact</SectionLabel>
         <ul className="mt-6 space-y-5">
           <li>
-            <span className="block text-xs font-medium uppercase tracking-wide text-white/40">
+            <span className="block text-xs font-semibold uppercase tracking-[0.15em] text-white/40">
               Email
             </span>
             <a
               href="mailto:anka.golub17@gmail.com"
-              className="mt-2 inline-block text-base text-white underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white sm:text-lg"
+              className="mt-2 inline-block text-base font-medium text-white underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white sm:text-lg"
             >
               anka.golub17@gmail.com
             </a>
           </li>
           <li>
-            <span className="block text-xs font-medium uppercase tracking-wide text-white/40">
+            <span className="block text-xs font-semibold uppercase tracking-[0.15em] text-white/40">
               LinkedIn
             </span>
             <a
               href="https://www.linkedin.com/in/anna-golubeva-9063b9237/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-block text-base text-white underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white sm:text-lg"
+              className="mt-2 inline-block text-base font-medium text-white underline decoration-white/30 underline-offset-4 transition-colors hover:decoration-white sm:text-lg"
             >
               linkedin.com/in/anna-golubeva-9063b9237
             </a>
           </li>
         </ul>
       </section>
-    </div>
+    </PageShell>
   );
 }

@@ -25,7 +25,7 @@ export function CaseStudyContent({ content }: CaseStudyContentProps) {
             key={section.title}
             className={index > 0 ? "mt-14 sm:mt-20" : undefined}
           >
-            <h2 className="text-xl font-medium tracking-tight text-white sm:text-2xl">
+            <h2 className="text-xl font-bold uppercase tracking-wide text-white sm:text-2xl">
               {section.title}
             </h2>
             <div className="mt-6 space-y-6">

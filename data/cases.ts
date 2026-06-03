@@ -1,8 +1,14 @@
+export type CaseStat = {
+  value: string;
+  label: string;
+};
+
 export type CaseStudy = {
   title: string;
   slug: string;
   description: string;
   tags: string[];
+  stats: CaseStat[];
   content: string;
 };
 
@@ -13,6 +19,11 @@ export const cases: CaseStudy[] = [
     description:
       "Designing a new digital sales channel for precious metals from zero",
     tags: ["Product Design", "E-commerce", "Fintech"],
+    stats: [
+      { value: "2", label: "storefronts" },
+      { value: "38+", label: "SKUs" },
+      { value: "2", label: "months" },
+    ],
     content: `Role: Lead Product Designer (solo). Team: Analyst, Backend Engineer, Frontend Engineer, QA. Timeline: September 2025 – present. Live: alfabank.ru/make-money/metall/
 
 CONTEXT
@@ -45,6 +56,11 @@ Launched 2 fully functional storefronts from zero in 2 months. Created a new dig
     description:
       "Building a design process framework for a team of 30+ designers",
     tags: ["Design Ops", "Systems", "Leadership"],
+    stats: [
+      { value: "30+", label: "designers" },
+      { value: "15", label: "teams" },
+      { value: "6+", label: "months" },
+    ],
     content: `Role: Designer (mid-level), primary contributor. Team: 1 additional designer, guided by Lead Designer. Scope: ~30 designers, 15 product teams, CPO, PMs, POs. Status: Adopted across all teams, in use 6+ months.
 
 CONTEXT
@@ -76,6 +92,11 @@ Framework adopted across all 15 product teams. Used as primary onboarding materi
     description:
       "Iterative redesign of a debit card application flow with cross-sell basket",
     tags: ["Product Design", "Fintech", "Research"],
+    stats: [
+      { value: "10%", label: "engagement" },
+      { value: "3 min", label: "saved" },
+      { value: "43%", label: "A/B traffic" },
+    ],
     content: `Role: Product Designer. Team: Designer, Motional Designer, Researcher, Analyst, Marketing, Editor, Frontend/Backend, QA. Timeline: September 2023 – 2025. Status: Live on production (mobile + desktop).
 
 CONTEXT
