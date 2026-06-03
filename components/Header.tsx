@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import { site } from "@/data/site";
 
 const nav = [
-  { href: "/work", label: "Work" },
-  { href: "/about", label: "About" },
+  { href: "/#work", label: "Work" },
+  { href: "/#about", label: "About" },
 ];
 
 export function Header() {
@@ -39,6 +39,8 @@ export function Header() {
       ? "border-transparent bg-transparent"
       : "border-white/10 bg-[#0a0a0a]/90 backdrop-blur-md";
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <>
       <header
@@ -61,11 +63,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-xs font-semibold uppercase tracking-[0.15em] transition-opacity ${
-                  pathname === item.href
-                    ? "text-white"
-                    : "text-white/70 hover:opacity-60"
-                }`}
+                className="text-xs font-semibold uppercase tracking-[0.15em] text-white/70 transition-opacity hover:opacity-60"
               >
                 {item.label}
               </Link>
@@ -98,7 +96,7 @@ export function Header() {
           type="button"
           className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center text-white transition-opacity duration-200 hover:opacity-60"
           aria-label="Close menu"
-          onClick={() => setMenuOpen(false)}
+          onClick={closeMenu}
         >
           <span className="sr-only">Close</span>
           <svg
@@ -121,7 +119,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className="text-5xl font-bold text-white transition-opacity duration-200 hover:opacity-60"
-              onClick={() => setMenuOpen(false)}
+              onClick={closeMenu}
             >
               {item.label}
             </Link>
