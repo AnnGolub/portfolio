@@ -14,15 +14,17 @@ export function CaseStudyCard({ caseStudy, className = "" }: CaseStudyCardProps)
     >
       {/* Mobile */}
       <div className="md:hidden">
-        <img
-          src={caseStudy.image}
-          alt=""
-          className="h-auto w-full rounded-none object-cover"
-          aria-hidden
-        />
-        <div className="font-helvetica-neue mt-2 flex items-end justify-between px-2">
-          <span className="max-w-[55%] self-end text-left text-[16px] font-normal leading-5 text-white">
-            {caseStudy.title}
+        <div className="px-2">
+          <img
+            src={caseStudy.image}
+            alt=""
+            className="h-auto w-full rounded-none object-cover"
+            aria-hidden
+          />
+        </div>
+        <div className="font-helvetica-neue flex items-end justify-between px-2 pb-0 pt-2">
+          <span className="max-w-[55%] self-end whitespace-pre-line text-left text-[16px] font-normal leading-5 text-white">
+            {caseStudy.mobileTitle}
           </span>
           <span className="max-w-[40%] self-end whitespace-normal text-right text-[16px] font-normal leading-5 text-white/60">
             {caseStudy.category}

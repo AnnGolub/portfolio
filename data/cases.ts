@@ -5,6 +5,8 @@ export type CaseStat = {
 
 export type CaseStudy = {
   title: string;
+  /** Two-line mobile card title; use \\n for line break (white-space: pre-line). */
+  mobileTitle: string;
   slug: string;
   image: string;
   category: string;
@@ -17,6 +19,7 @@ export type CaseStudy = {
 export const cases: CaseStudy[] = [
   {
     title: "Precious Metals Storefront",
+    mobileTitle: "Precious Metals\nStorefront",
     slug: "metals",
     image: "/Pic.jpg",
     category: "Fintech & E-Commerce",
@@ -64,6 +67,7 @@ LIVE
   },
   {
     title: "Unified Design Process",
+    mobileTitle: "Unified Design\nProcess",
     slug: "design-process",
     image: "/Pic-1.jpg",
     category: "Systems & Leadership",
@@ -112,6 +116,7 @@ Framework adopted across all 15 product teams. Used as primary onboarding materi
   },
   {
     title: "Product Basket Form",
+    mobileTitle: "Product Basket\nForm",
     slug: "basket",
     image: "/Pic-2.jpg",
     category: "Fintech & Research",

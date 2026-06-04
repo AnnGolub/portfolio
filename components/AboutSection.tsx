@@ -25,7 +25,7 @@ export function AboutSection() {
           {aboutItems.map((text, index) => (
             <div
               key={index}
-              className={index > 0 ? "max-md:!mb-0 max-md:!mt-6" : "max-md:!m-0"}
+              className={index > 0 ? "max-md:!mb-0 max-md:!mt-8" : "max-md:!m-0"}
             >
               <p className="font-helvetica-neue max-md:!mb-0 max-md:!mt-0 px-2 text-[28px] font-bold leading-none text-white">
                 {index + 1}
@@ -35,7 +35,7 @@ export function AboutSection() {
               </p>
               {index < aboutItems.length - 1 && (
                 <div
-                  className="mx-2 max-md:!mb-0 max-md:!mt-6 h-px bg-white/60"
+                  className="mx-2 max-md:!mb-0 max-md:!mt-8 h-px bg-white/60"
                   aria-hidden
                 />
               )}
