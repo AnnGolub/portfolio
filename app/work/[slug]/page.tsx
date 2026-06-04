@@ -35,7 +35,7 @@ export default function CaseStudyPage({ params }: PageProps) {
   return (
     <PageShell tone="elevated">
       <Link
-        href="/#work"
+        href="/#projects"
         className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50 transition-colors hover:text-white"
       >
         ← Work

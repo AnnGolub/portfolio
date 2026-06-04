@@ -1,12 +1,14 @@
 import Link from "next/link";
+import { MobileHeroNav } from "@/components/MobileHeroNav";
 import { TypewriterText } from "@/components/TypewriterText";
 import { site } from "@/data/site";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100dvh] overflow-hidden bg-[#0a0a0a] md:h-screen">
+    <section className="relative min-h-[100dvh] overflow-hidden max-md:!mb-0 max-md:!mt-0 max-md:bg-transparent max-md:!p-0 bg-[#0a0a0a] md:h-screen">
       {/* Mobile */}
       <div className="relative h-[100dvh] md:hidden">
+        <MobileHeroNav />
         <img
           src="/MainBanner.jpg"
           alt=""
@@ -30,7 +32,7 @@ export function Hero() {
             className="mt-4 max-w-md text-left text-lg leading-relaxed text-white/70"
           />
           <Link
-            href="#work"
+            href="#projects"
             className="mt-8 inline-flex w-fit rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
           >
             View work

@@ -1,13 +1,10 @@
 "use client";
 
 import Lenis from "@studio-freight/lenis";
+import { LENIS_DURATION, LENIS_EASING, setLenis } from "@/lib/lenis";
 import { useEffect } from "react";
 
 const MOBILE_MEDIA_QUERY = "(max-width: 767px)";
-
-function easeInOutCubic(t: number): number {
-  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-}
 
 export function SmoothScroll() {
   useEffect(() => {
@@ -19,11 +16,13 @@ export function SmoothScroll() {
       if (!mediaQuery.matches || lenis) return;
 
       lenis = new Lenis({
-        duration: 1.8,
-        easing: easeInOutCubic,
+        duration: LENIS_DURATION,
+        easing: LENIS_EASING,
         smoothWheel: true,
         syncTouch: true,
       });
+
+      setLenis(lenis);
 
       const raf = (time: number) => {
         lenis?.raf(time);
@@ -36,6 +35,7 @@ export function SmoothScroll() {
     const stop = () => {
       cancelAnimationFrame(rafId);
       lenis?.destroy();
+      setLenis(null);
       lenis = null;
     };
 

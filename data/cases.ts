@@ -7,6 +7,7 @@ export type CaseStudy = {
   title: string;
   slug: string;
   image: string;
+  category: string;
   description: string;
   tags: string[];
   stats: CaseStat[];
@@ -18,6 +19,7 @@ export const cases: CaseStudy[] = [
     title: "Precious Metals Storefront",
     slug: "metals",
     image: "/Pic.jpg",
+    category: "Fintech & E-Commerce",
     description:
       "Designing a new digital sales channel for precious metals from zero",
     tags: ["Product Design", "E-commerce", "Fintech"],
@@ -64,6 +66,7 @@ LIVE
     title: "Unified Design Process",
     slug: "design-process",
     image: "/Pic-1.jpg",
+    category: "Systems & Leadership",
     description:
       "Building a design process framework for a team of 30+ designers",
     tags: ["Design Ops", "Systems", "Leadership"],
@@ -108,9 +111,10 @@ OUTCOME
 Framework adopted across all 15 product teams. Used as primary onboarding material for new designers. Reduced unplanned task interruptions. Active for 6+ months with no major revisions needed.`,
   },
   {
-    title: "Product Basket",
+    title: "Product Basket Form",
     slug: "basket",
     image: "/Pic-2.jpg",
+    category: "Fintech & Research",
     description:
       "Iterative redesign of a debit card application flow with cross-sell basket",
     tags: ["Product Design", "Fintech", "Research"],

@@ -13,26 +13,29 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="scroll-mt-24 max-md:bg-[#181819] bg-surface-3 max-md:px-0 max-md:py-0 px-5 py-16 sm:px-8 sm:py-24"
+      className="scroll-mt-24 max-md:!m-0 max-md:!bg-transparent max-md:!p-0 max-md:!py-0 bg-surface-3 px-5 py-16 sm:px-8 sm:py-24"
     >
       {/* Mobile About */}
-      <div className="md:hidden">
-        <h2 className="font-helvetica-neue mt-12 px-2 text-[47px] font-extrabold leading-none text-white">
+      <div className="max-md:!m-0 max-md:!p-0 md:hidden">
+        <h2 className="font-helvetica-neue max-md:!mb-0 max-md:!mt-12 px-2 text-[47px] font-extrabold leading-none text-white">
           About
         </h2>
 
-        <div className="mt-6">
+        <div className="max-md:!mb-0 max-md:!mt-6">
           {aboutItems.map((text, index) => (
-            <div key={index} className={index > 0 ? "mt-6" : undefined}>
-              <p className="font-helvetica-neue px-2 text-[28px] font-bold leading-none text-white">
+            <div
+              key={index}
+              className={index > 0 ? "max-md:!mb-0 max-md:!mt-6" : "max-md:!m-0"}
+            >
+              <p className="font-helvetica-neue max-md:!mb-0 max-md:!mt-0 px-2 text-[28px] font-bold leading-none text-white">
                 {index + 1}
               </p>
-              <p className="font-helvetica-neue mt-2 px-2 text-[18px] font-normal leading-6 text-white/60">
+              <p className="font-helvetica-neue max-md:!mb-0 max-md:!mt-2 px-2 text-[18px] font-normal leading-6 text-white/60">
                 {text}
               </p>
               {index < aboutItems.length - 1 && (
                 <div
-                  className="mx-2 mt-6 h-px bg-white/60"
+                  className="mx-2 max-md:!mb-0 max-md:!mt-6 h-px bg-white/60"
                   aria-hidden
                 />
               )}
@@ -65,34 +68,34 @@ export function AboutSection() {
       {/* Mobile Contact */}
       <section
         id="contact"
-        className="scroll-mt-24 mt-12 pb-12 md:hidden"
+        className="max-md:!mb-0 max-md:!mt-12 max-md:!pb-12 scroll-mt-24 md:hidden"
       >
-        <h2 className="font-helvetica-neue px-2 text-[47px] font-extrabold leading-none text-white">
+        <h2 className="font-helvetica-neue max-md:!mb-0 max-md:!mt-0 px-2 text-[47px] font-extrabold leading-none text-white">
           Contact
         </h2>
 
-        <div className="mt-6">
-          <p className="font-helvetica-neue px-2 text-2xl font-bold leading-none text-white">
+        <div className="max-md:!mb-0 max-md:!mt-6">
+          <p className="font-helvetica-neue max-md:!mb-0 max-md:!mt-0 px-2 text-2xl font-bold leading-none text-white">
             email
           </p>
           <a
             href={`mailto:${site.email}`}
-            className="font-helvetica-neue mt-2 block px-2 text-[18px] font-normal leading-6 text-white/60 underline transition-opacity hover:opacity-80"
+            className="font-helvetica-neue max-md:!mb-0 max-md:!mt-2 block px-2 text-[18px] font-normal leading-6 text-white/60 underline transition-opacity hover:opacity-80"
           >
             {site.email}
           </a>
 
-          <div className="mx-2 mt-6 h-px bg-white/60" aria-hidden />
+          <div className="mx-2 max-md:!mb-0 max-md:!mt-6 h-px bg-white/60" aria-hidden />
 
-          <div className="mt-6">
-            <p className="font-helvetica-neue px-2 text-2xl font-bold leading-none text-white">
+          <div className="max-md:!mb-0 max-md:!mt-6">
+            <p className="font-helvetica-neue max-md:!mb-0 max-md:!mt-0 px-2 text-2xl font-bold leading-none text-white">
               linkedin
             </p>
             <a
               href={site.linkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-helvetica-neue mt-2 block break-all px-2 text-[18px] font-normal leading-6 text-white/60 underline transition-opacity hover:opacity-80"
+              className="font-helvetica-neue max-md:!mb-0 max-md:!mt-2 block break-all px-2 text-[18px] font-normal leading-6 text-white/60 underline transition-opacity hover:opacity-80"
             >
               {site.linkedIn}
             </a>

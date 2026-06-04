@@ -1,17 +1,13 @@
 "use client";
 
+import { AnchorLink } from "@/components/AnchorLink";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { contactHref, site } from "@/data/site";
 
 const desktopNav = [
-  { href: "/#work", label: "Work" },
-  { href: "/#about", label: "About" },
-];
-
-const mobileNav = [
-  { href: "/#work", label: "Projects" },
+  { href: "/#projects", label: "Work" },
   { href: "/#about", label: "About" },
 ];
 
@@ -28,47 +24,34 @@ export function Header() {
   }, []);
 
   const desktopTransparent = isHome && !scrolled;
+  const contactLinkHref = isHome ? contactHref : `/${contactHref}`;
 
   return (
     <header
-      className={`static w-full border-b transition-colors duration-300 max-md:border-transparent max-md:bg-transparent md:fixed md:inset-x-0 md:top-0 md:z-50 ${
+      className={`w-full border-b transition-colors duration-300 ${
+        isHome ? "max-md:hidden" : "static max-md:border-transparent max-md:bg-transparent"
+      } md:fixed md:inset-x-0 md:top-0 md:z-50 ${
         desktopTransparent
           ? "md:border-transparent md:bg-transparent"
           : "md:border-white/10 md:bg-[#0a0a0a]/90 md:backdrop-blur-md"
       }`}
     >
       <div
-        className={`flex items-center px-2 pt-6 max-md:pb-0 md:px-8 md:py-5 ${
-          isHome ? "justify-between md:justify-end" : "justify-between"
-        }`}
+        className={`flex items-center justify-between px-2 pt-6 max-md:pb-0 md:justify-end md:px-8 md:py-5`}
       >
-        {isHome ? (
-          <nav className="font-helvetica-neue flex items-center gap-6 md:hidden">
-            {mobileNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-[14px] font-bold text-white transition-opacity hover:opacity-60"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        ) : (
-          <Link
-            href="/"
-            className="text-sm font-bold tracking-tight text-white transition-opacity hover:opacity-70 md:hidden"
-          >
-            {site.name}
-          </Link>
-        )}
-
         <Link
-          href={isHome ? contactHref : `/${contactHref}`}
+          href="/"
+          className="text-sm font-bold tracking-tight text-white transition-opacity hover:opacity-70 md:hidden"
+        >
+          {site.name}
+        </Link>
+
+        <AnchorLink
+          href={contactLinkHref}
           className="font-helvetica-neue rounded-2xl bg-white px-4 py-3 text-[14px] font-bold text-black transition-opacity hover:opacity-90 md:hidden"
         >
           Let&apos;s talk
-        </Link>
+        </AnchorLink>
 
         {!isHome && (
           <Link

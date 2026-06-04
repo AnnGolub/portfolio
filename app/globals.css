@@ -19,6 +19,17 @@ body {
   background: var(--background);
 }
 
+@media (max-width: 767px) {
+  body {
+    background: #181819;
+  }
+
+  main > * {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
