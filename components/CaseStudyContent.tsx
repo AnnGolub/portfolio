@@ -1,5 +1,6 @@
 import { CaseStudyMeta } from "@/components/CaseStudyMeta";
 import { CaseStudyStats } from "@/components/CaseStudyStats";
+import { LiveLinks } from "@/components/LiveLinks";
 import type { CaseStat } from "@/data/cases";
 import {
   parseCaseContent,
@@ -37,15 +38,21 @@ export function CaseStudyContent({ content, stats }: CaseStudyContentProps) {
             <h2 className="text-xl font-bold uppercase tracking-wide text-white sm:text-2xl">
               {section.title}
             </h2>
-            <div className="mt-6 space-y-6">
-              {splitSectionParagraphs(section.body).map((paragraph, i) => (
-                <p
-                  key={i}
-                  className="text-base leading-[1.85] text-white/75 sm:text-lg sm:leading-[1.9]"
-                >
-                  {paragraph}
-                </p>
-              ))}
+            <div className="mt-6">
+              {section.title === "LIVE" ? (
+                <LiveLinks value={section.body} />
+              ) : (
+                <div className="space-y-6">
+                  {splitSectionParagraphs(section.body).map((paragraph, i) => (
+                    <p
+                      key={i}
+                      className="text-base leading-[1.85] text-white/75 sm:text-lg sm:leading-[1.9]"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              )}
             </div>
           </section>
         ))}

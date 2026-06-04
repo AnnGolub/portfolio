@@ -27,7 +27,7 @@ export const cases: CaseStudy[] = [
       { value: "2", label: "Storefronts launched" },
       { value: "2 mo", label: "From zero to production" },
     ],
-    content: `Role: Lead Product Designer (solo). Team: Analyst, Backend Engineer, Frontend Engineer, QA. Timeline: September 2025 – present. Live: alfabank.ru/make-money/metall/
+    content: `Role: Lead Product Designer (solo). Team: Analyst, Backend Engineer, Frontend Engineer, QA. Timeline: September 2025 – present. Live: Precious Metals Hub (https://alfabank.ru/make-money/metall/), Coins Storefront (https://alfabank.ru/make-money/metall/coins/), Bars Storefront (https://alfabank.ru/make-money/metall/bars/)
 
 CONTEXT
 In 2022, Russia abolished the 20% VAT on retail sales of precious metal bars, making gold and silver accessible investment instruments for the mass market. By 2025, precious metals had become one of the top-performing asset classes, with major banks competing for retail market share. Alfa-Bank had the demand — but no digital channel to capture it.
@@ -51,7 +51,12 @@ SOLUTION
 The storefront consists of three connected surfaces. Category landing page introduces precious metals as an investment product and routes users to bars or coins. Product catalog supports filtering, sorting, search, and pagination across 38+ SKUs with automatic price updates via Central Bank integration. Cart + lead form flow lets users add products with quantity controls, review in a modal overlay, then submit a structured request with name, phone, and preferred city.
 
 IMPACT
-Launched 2 fully functional storefronts from zero in 2 months. Created a new digital sales channel: structured lead → telemarketing call → branch purchase. Telemarketing efficiency improved: agents receive specific product lists instead of vague verbal requests. Target: +10% conversion from catalog sessions to submitted requests.`,
+Launched 2 fully functional storefronts from zero in 2 months. Created a new digital sales channel: structured lead → telemarketing call → branch purchase. Telemarketing efficiency improved: agents receive specific product lists instead of vague verbal requests. Target: +10% conversion from catalog sessions to submitted requests.
+
+LIVE
+- Precious Metals Hub: https://alfabank.ru/make-money/metall/
+- Coins Storefront: https://alfabank.ru/make-money/metall/coins/
+- Bars Storefront: https://alfabank.ru/make-money/metall/bars/`,
   },
   {
     title: "Unified Design Process",
@@ -84,7 +89,17 @@ Qualitative validation — ran structured sessions with 3–4 participants each,
 Stakeholder alignment — presented to Head of Project Management, then defended in front of all product owners and the CPO. Feedback collected via Google Sheets, every comment processed and resolved before final approval.
 
 WHAT WE INTRODUCED
-Sprint model for designers — 1–2 week sprint cycle with transparent task status, predictable timelines, and reduced unplanned interruptions. Jira task templates — structured brief template per task type, eliminating the most common source of rework. Design grooming sessions — dedicated sync before sprint planning to align on goals, constraints, and scope. Regular design planning — sprint kickoff sessions where only groomed, properly briefed tasks are taken in.
+Task type definition table — a reference document helping anyone (designers, PMs, POs) quickly identify which category a task falls into before it enters the design workflow.
+
+High-level process tables — two versions covering standard and non-standard task types, giving teams a clear top-level view of how design work moves from brief to delivery.
+
+Detailed stage-by-stage table — a comprehensive map of ~20 stages in a task's lifecycle, showing exactly where and how the designer participates at each step — directly, indirectly, or as a reviewer.
+
+Jira task templates — structured brief templates for every task type used on the website. Templates are synced with Jira as auto-populated stubs, so requestors fill in context before the task reaches a designer. No more empty briefs.
+
+Useful links library — a curated reference hub with everything designers and collaborators need: tools, guides, processes, and contacts.
+
+Marketing-specific process diagram — a dedicated flow diagram created to align with the marketing team on design stages, addressing the specific chaos marketing requests introduced into the workflow.
 
 OUTCOME
 Framework adopted across all 15 product teams. Used as primary onboarding material for new designers. Reduced unplanned task interruptions. Active for 6+ months with no major revisions needed.`,
@@ -103,7 +118,7 @@ Framework adopted across all 15 product teams. Used as primary onboarding materi
       { value: "648K", label: "Cashback package traffic" },
       { value: "24,345", label: "Cashback package orders" },
     ],
-    content: `Role: Product Designer. Team: Designer, Motional Designer, Researcher, Analyst, Marketing, Editor, Frontend/Backend, QA. Timeline: September 2023 – 2025. Status: Live on production (mobile + desktop).
+    content: `Role: Product Designer. Team: Designer, Motional Designer, Researcher, Analyst, Marketing, Editor, Frontend/Backend, QA. Timeline: September 2023 – 2025. Status: Live on production (mobile + desktop). Live: Product Basket (https://alfabank.ru/everyday/debit-cards/alfacard/)
 
 CONTEXT
 When a new customer applies for an Alfa-Bank debit card online, they go through a multi-step application form. The business wanted to use this moment to introduce additional banking products. Goal: increase product penetration, generate commission income, and reduce cross-sell costs by embedding offers into the onboarding flow.
@@ -129,6 +144,9 @@ Autumn 2024 — A/B test on 43% of mobile traffic. Results: no drop in conversio
 January 2025 — built full-scope target version, ran another usability test, addressed remaining issues, shipped. Desktop version designed and launched shortly after.
 
 OUTCOME
-Basket live on production across mobile and desktop. No conversion loss during rollout. 10% of users actively engage with basket. ~3 minutes saved per courier/branch meeting. 3 usability tests across 2 years shaped a significantly more usable final product.`,
+Basket live on production across mobile and desktop. No conversion loss during rollout. 10% of users actively engage with basket. ~3 minutes saved per courier/branch meeting. 3 usability tests across 2 years shaped a significantly more usable final product.
+
+LIVE
+- Product Basket (Alfa-Card application): https://alfabank.ru/everyday/debit-cards/alfacard/`,
   },
 ];
