@@ -19,7 +19,7 @@ export function CaseStudyCard({ caseStudy, className = "" }: CaseStudyCardProps)
         <img
           src={caseStudy.image}
           alt=""
-          className="h-auto w-full rounded-2xl object-cover"
+          className="h-auto w-full rounded-none object-cover"
           aria-hidden
         />
         <div className="font-helvetica-neue mt-2 flex items-end justify-between gap-2 text-base font-normal leading-5">

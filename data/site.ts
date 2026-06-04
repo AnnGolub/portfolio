@@ -5,6 +5,7 @@ export const site = {
   mobileTagline:
     "Senior Product Designer, building products used by millions — and the processes that make design teams work",
   email: "anka.golub17@gmail.com",
+  linkedIn: "https://www.linkedin.com/in/anna-golubeva-9063b9237/",
 };
 
 export const letsTalkHref = `mailto:${site.email}`;

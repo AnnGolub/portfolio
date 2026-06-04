@@ -1,4 +1,4 @@
-import { LetsTalkLink, letsTalkButtonClassName } from "@/components/LetsTalkLink";
+import { LetsTalkLink } from "@/components/LetsTalkLink";
 import { site } from "@/data/site";
 
 export function MobileHeroIntro() {
@@ -7,7 +7,9 @@ export function MobileHeroIntro() {
       <p className="font-helvetica-neue mt-12 px-2 text-[18px] font-normal leading-6 text-white/60">
         {site.mobileTagline}
       </p>
-      <LetsTalkLink className={`${letsTalkButtonClassName} mt-6`} />
+      <div className="mt-6 flex justify-center">
+        <LetsTalkLink />
+      </div>
     </div>
   );
 }

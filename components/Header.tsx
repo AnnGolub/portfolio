@@ -31,7 +31,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 w-full border-b transition-colors duration-300 max-md:border-transparent max-md:bg-transparent ${
+      className={`static w-full border-b transition-colors duration-300 max-md:border-transparent max-md:bg-transparent md:fixed md:inset-x-0 md:top-0 md:z-50 ${
         desktopTransparent
           ? "md:border-transparent md:bg-transparent"
           : "md:border-white/10 md:bg-[#0a0a0a]/90 md:backdrop-blur-md"
