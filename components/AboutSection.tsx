@@ -13,7 +13,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="scroll-mt-24 max-md:!m-0 max-md:!bg-transparent max-md:!p-0 max-md:!py-0 bg-surface-3 px-5 py-16 sm:px-8 sm:py-24"
+      className="scroll-mt-24 max-md:!m-0 max-md:bg-background max-md:!p-0 max-md:!py-0 bg-background px-5 py-16 sm:px-8 sm:py-24"
     >
       {/* Mobile About */}
       <div className="max-md:!m-0 max-md:!p-0 md:hidden">

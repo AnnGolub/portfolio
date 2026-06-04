@@ -15,9 +15,11 @@ export function Hero() {
           className="absolute inset-0 h-full w-full object-cover object-top"
           aria-hidden
         />
-        <h1 className="font-helvetica-neue absolute bottom-2 left-0 right-0 z-10 text-center text-[47px] font-extrabold leading-none text-white">
-          {site.name}
-        </h1>
+        <div className="absolute bottom-2 left-0 right-0 z-10 px-2">
+          <h1 className="font-helvetica-neue text-center text-[clamp(40px,11.5vw,56px)] font-extrabold leading-none text-white">
+            {site.name}
+          </h1>
+        </div>
       </div>
 
       {/* Desktop */}

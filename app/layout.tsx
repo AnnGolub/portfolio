@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="min-h-screen bg-background max-md:bg-[#181819] font-sans text-foreground antialiased">
+      <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <SmoothScroll />
         <Header />
         <main>{children}</main>

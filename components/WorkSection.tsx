@@ -11,7 +11,7 @@ export function WorkSection({ cases }: WorkSectionProps) {
   return (
     <section
       id="projects"
-      className="scroll-mt-24 max-md:!m-0 max-md:!bg-transparent max-md:!p-0 max-md:!py-0 py-16 sm:py-24 md:bg-gradient-to-b md:from-[#0a0a0a] md:via-surface-1 md:to-surface-2"
+      className="scroll-mt-24 max-md:!m-0 max-md:bg-background max-md:!p-0 max-md:!py-0 bg-background py-16 sm:py-24 md:bg-gradient-to-b md:from-[#0a0a0a] md:via-surface-1 md:to-surface-2"
     >
       <h2 className="font-helvetica-neue max-md:!mb-0 max-md:!mt-12 px-2 text-[47px] font-extrabold leading-none text-white md:hidden">
         Projects

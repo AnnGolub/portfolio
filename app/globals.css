@@ -12,18 +12,28 @@
 
 html {
   scroll-behavior: auto;
+  overscroll-behavior: none;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
+  overscroll-behavior: none;
 }
 
 @media (max-width: 767px) {
-  body {
-    background: #181819;
-  }
-
   main > * {
     margin-top: 0 !important;
     margin-bottom: 0 !important;

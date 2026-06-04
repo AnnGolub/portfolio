@@ -18,8 +18,11 @@ export function SmoothScroll() {
       lenis = new Lenis({
         duration: LENIS_DURATION,
         easing: LENIS_EASING,
+        orientation: "vertical",
+        gestureOrientation: "vertical",
         smoothWheel: true,
-        syncTouch: true,
+        touchMultiplier: 2.0,
+        infinite: false,
       });
 
       setLenis(lenis);

@@ -10,7 +10,7 @@ export function CaseStudyCard({ caseStudy, className = "" }: CaseStudyCardProps)
   return (
     <Link
       href={`/work/${caseStudy.slug}`}
-      className={`group block max-md:!m-0 px-2 md:flex md:h-full md:min-h-[24rem] md:w-[min(88vw,22rem)] md:shrink-0 md:flex-col md:justify-between md:border md:border-white/10 md:bg-[#0a0a0a] md:p-8 md:px-8 md:transition-colors md:hover:border-white/20 lg:w-full lg:shrink ${className}`}
+      className={`group block max-md:!m-0 max-md:px-0 px-2 md:flex md:h-full md:min-h-[24rem] md:w-[min(88vw,22rem)] md:shrink-0 md:flex-col md:justify-between md:border md:border-white/10 md:bg-[#0a0a0a] md:p-8 md:px-8 md:transition-colors md:hover:border-white/20 lg:w-full lg:shrink ${className}`}
     >
       {/* Mobile */}
       <div className="md:hidden">
@@ -20,11 +20,11 @@ export function CaseStudyCard({ caseStudy, className = "" }: CaseStudyCardProps)
           className="h-auto w-full rounded-none object-cover"
           aria-hidden
         />
-        <div className="font-helvetica-neue flex max-md:!mt-2 items-end justify-between gap-4 text-[16px] font-normal leading-5">
-          <span className="min-w-0 flex-1 text-left text-white">
+        <div className="font-helvetica-neue mt-2 flex items-end justify-between px-2">
+          <span className="max-w-[55%] self-end text-left text-[16px] font-normal leading-5 text-white">
             {caseStudy.title}
           </span>
-          <span className="shrink-0 whitespace-nowrap text-right text-white/60">
+          <span className="max-w-[40%] self-end whitespace-normal text-right text-[16px] font-normal leading-5 text-white/60">
             {caseStudy.category}
           </span>
         </div>
