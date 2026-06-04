@@ -77,7 +77,7 @@ export function AboutSection() {
           </p>
           <a
             href={`mailto:${site.email}`}
-            className="font-helvetica-neue mt-2 block px-2 text-[18px] font-normal leading-6 text-white/60 transition-opacity hover:opacity-80"
+            className="font-helvetica-neue mt-2 block px-2 text-[18px] font-normal leading-6 text-white/60 underline transition-opacity hover:opacity-80"
           >
             {site.email}
           </a>
@@ -92,7 +92,7 @@ export function AboutSection() {
               href={site.linkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-helvetica-neue mt-2 block break-all px-2 text-[18px] font-normal leading-6 text-white/60 transition-opacity hover:opacity-80"
+              className="font-helvetica-neue mt-2 block break-all px-2 text-[18px] font-normal leading-6 text-white/60 underline transition-opacity hover:opacity-80"
             >
               {site.linkedIn}
             </a>
