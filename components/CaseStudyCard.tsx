@@ -26,7 +26,7 @@ export function CaseStudyCard({ caseStudy, className = "" }: CaseStudyCardProps)
           <span className="max-w-[55%] self-end whitespace-pre-line text-left text-[16px] font-normal leading-5 text-white">
             {caseStudy.mobileTitle}
           </span>
-          <span className="max-w-[40%] self-end whitespace-normal text-right text-[16px] font-normal leading-5 text-white/60">
+          <span className="max-w-[40%] shrink-0 self-end whitespace-nowrap text-right text-[14px] font-normal leading-5 text-white/60">
             {caseStudy.category}
           </span>
         </div>

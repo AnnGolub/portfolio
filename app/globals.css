@@ -35,8 +35,7 @@ body {
 
 @media (max-width: 767px) {
   .hero-mobile-name {
-    font-size: 11.8vw !important;
-    font-size: clamp(40px, 11.8vw, 60px) !important;
+    font-size: calc(100vw / 7.8) !important;
   }
 
   main > * {
