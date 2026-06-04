@@ -7,42 +7,65 @@ type CaseStudyCardProps = {
 };
 
 export function CaseStudyCard({ caseStudy, className = "" }: CaseStudyCardProps) {
+  const tagsLabel = caseStudy.tags.join(" & ");
+
   return (
     <Link
       href={`/work/${caseStudy.slug}`}
-      className={`group flex h-full min-h-[22rem] w-[min(88vw,22rem)] shrink-0 flex-col justify-between border border-white/10 bg-[#0a0a0a] p-6 transition-colors hover:border-white/20 sm:min-h-[24rem] sm:w-full sm:shrink sm:p-8 ${className}`}
+      className={`group block px-2 md:flex md:h-full md:min-h-[24rem] md:w-[min(88vw,22rem)] md:shrink-0 md:flex-col md:justify-between md:border md:border-white/10 md:bg-[#0a0a0a] md:p-8 md:px-8 md:transition-colors md:hover:border-white/20 lg:w-full lg:shrink ${className}`}
     >
-      <div>
-        <h2 className="text-xl font-bold tracking-tight text-white transition-opacity group-hover:opacity-80 sm:text-2xl">
-          {caseStudy.title}
-        </h2>
-        <p className="mt-3 text-sm leading-relaxed text-white/60 sm:text-base">
-          {caseStudy.description}
-        </p>
-        <ul className="mt-4 flex flex-wrap gap-2">
-          {caseStudy.tags.map((tag) => (
-            <li
-              key={tag}
-              className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/35 sm:text-xs"
-            >
-              {tag}
+      {/* Mobile */}
+      <div className="md:hidden">
+        <img
+          src={caseStudy.image}
+          alt=""
+          className="h-auto w-full rounded-2xl object-cover"
+          aria-hidden
+        />
+        <div className="font-helvetica-neue mt-2 flex items-end justify-between gap-2 text-base font-normal leading-5">
+          <span className="min-w-0 text-left text-white">
+            {caseStudy.title}
+          </span>
+          <span className="max-w-[50%] shrink-0 text-right text-white/60">
+            {tagsLabel}
+          </span>
+        </div>
+      </div>
+
+      {/* Desktop — unchanged */}
+      <div className="hidden md:flex md:h-full md:flex-col md:justify-between">
+        <div>
+          <h2 className="text-2xl font-bold tracking-tight text-white transition-opacity group-hover:opacity-80">
+            {caseStudy.title}
+          </h2>
+          <p className="mt-3 text-base leading-relaxed text-white/60">
+            {caseStudy.description}
+          </p>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {caseStudy.tags.map((tag) => (
+              <li
+                key={tag}
+                className="text-xs font-semibold uppercase tracking-[0.15em] text-white/35"
+              >
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <ul className="mt-8 space-y-4 border-t border-white/10 pt-6">
+          {caseStudy.stats.map((stat) => (
+            <li key={stat.label}>
+              <p className="text-3xl font-bold tracking-tight text-white">
+                {stat.value}
+              </p>
+              <p className="mt-0.5 text-xs font-semibold uppercase tracking-[0.15em] text-white/40">
+                {stat.label}
+              </p>
             </li>
           ))}
         </ul>
       </div>
-
-      <ul className="mt-8 space-y-4 border-t border-white/10 pt-6">
-        {caseStudy.stats.map((stat) => (
-          <li key={stat.label}>
-            <p className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              {stat.value}
-            </p>
-            <p className="mt-0.5 text-xs font-semibold uppercase tracking-[0.15em] text-white/40">
-              {stat.label}
-            </p>
-          </li>
-        ))}
-      </ul>
     </Link>
   );
 }

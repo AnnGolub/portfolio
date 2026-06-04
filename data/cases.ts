@@ -6,6 +6,7 @@ export type CaseStat = {
 export type CaseStudy = {
   title: string;
   slug: string;
+  image: string;
   description: string;
   tags: string[];
   stats: CaseStat[];
@@ -16,6 +17,7 @@ export const cases: CaseStudy[] = [
   {
     title: "Precious Metals Storefront",
     slug: "metals",
+    image: "/Pic.jpg",
     description:
       "Designing a new digital sales channel for precious metals from zero",
     tags: ["Product Design", "E-commerce", "Fintech"],
@@ -61,6 +63,7 @@ LIVE
   {
     title: "Unified Design Process",
     slug: "design-process",
+    image: "/Pic-1.jpg",
     description:
       "Building a design process framework for a team of 30+ designers",
     tags: ["Design Ops", "Systems", "Leadership"],
@@ -107,6 +110,7 @@ Framework adopted across all 15 product teams. Used as primary onboarding materi
   {
     title: "Product Basket",
     slug: "basket",
+    image: "/Pic-2.jpg",
     description:
       "Iterative redesign of a debit card application flow with cross-sell basket",
     tags: ["Product Design", "Fintech", "Research"],

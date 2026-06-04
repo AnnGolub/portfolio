@@ -26,7 +26,10 @@ export function AboutSection() {
           <p>Now based in Barcelona, looking for the next stage.</p>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-10 sm:mt-14 sm:pt-12">
+        <div
+          id="contact"
+          className="scroll-mt-24 mt-12 border-t border-white/10 pt-10 sm:mt-14 sm:pt-12"
+        >
           <SectionLabel>Contact</SectionLabel>
           <ul className="mt-6 space-y-5">
             <li>
