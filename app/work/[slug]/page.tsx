@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CaseStudyBackButton } from "@/components/CaseStudyBackButton";
 import { CaseStudyContent } from "@/components/CaseStudyContent";
+import { CaseStudyLinks } from "@/components/CaseStudyLinks";
+import { CaseStudyStats } from "@/components/CaseStudyStats";
 import { PageShell } from "@/components/PageShell";
+import {
+  getCaseStudyDisplayStats,
+  getCaseStudyLiveLinks,
+} from "@/lib/caseStudyPage";
 import { getAllSlugs, getCaseBySlug } from "@/lib/cases";
 
 type PageProps = {
@@ -31,52 +37,39 @@ export default function CaseStudyPage({ params }: PageProps) {
     notFound();
   }
 
+  const liveLinks = getCaseStudyLiveLinks(caseStudy.content);
+  const displayStats = getCaseStudyDisplayStats(
+    caseStudy.slug,
+    caseStudy.stats,
+  );
+
   return (
     <PageShell
       tone="base"
       className="!px-4 sm:!px-4"
       innerClassName="max-w-full"
     >
-      <Link
-        href="/#projects"
-        className="mb-6 inline-block text-sm text-white/50 transition-colors hover:text-white"
-      >
-        ← Work
-      </Link>
+      <CaseStudyBackButton />
+
+      <h1 className="mt-6 text-[47px] font-medium leading-normal text-white">
+        {caseStudy.title}
+      </h1>
 
       {caseStudy.image ? (
         <img
           src={caseStudy.image}
           alt=""
-          className="mb-8 w-full rounded-xl object-cover"
+          className="mt-6 w-full rounded-xl object-cover"
         />
       ) : (
-        <div
-          className="mb-8 h-60 w-full rounded-xl bg-[#1a1a1a]"
-          aria-hidden
-        />
+        <div className="mt-6 h-60 w-full rounded-xl bg-[#1a1a1a]" aria-hidden />
       )}
 
-      <header className="mb-8">
-        <h1 className="text-2xl font-bold text-white sm:text-3xl">
-          {caseStudy.title}
-        </h1>
-        <p className="mt-3 text-base leading-[26px] text-white/[0.85]">
-          {caseStudy.description}
-        </p>
-        <ul className="mt-6 flex flex-wrap gap-2">
-          {caseStudy.tags.map((tag) => (
-            <li
-              key={tag}
-              className="rounded-full border border-white/20 px-3 py-1 text-[13px] text-white/60"
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
-      </header>
+      <CaseStudyLinks links={liveLinks} />
 
-      <CaseStudyContent content={caseStudy.content} stats={caseStudy.stats} />
+      <CaseStudyStats stats={displayStats} />
+
+      <CaseStudyContent content={caseStudy.content} />
     </PageShell>
   );
 }
