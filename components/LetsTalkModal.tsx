@@ -64,7 +64,7 @@ export default function LetsTalkModal({ isOpen, onClose }: LetsTalkModalProps) {
           aria-label="Close"
           className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#3a3a3a] transition-opacity hover:opacity-80"
         >
-          <img src="/icons/Close.svg" width={24} height={24} alt="" />
+          <img src="/icons/Close.svg" width={32} height={32} alt="" />
         </button>
 
         <div className="flex items-center self-stretch px-4 pb-3 pt-4">
@@ -89,9 +89,9 @@ export default function LetsTalkModal({ isOpen, onClose }: LetsTalkModalProps) {
               <img
                 src={row.icon}
                 alt=""
-                width={32}
-                height={32}
-                className="h-8 w-8 shrink-0 object-contain"
+                width={20}
+                height={20}
+                className="h-5 w-5 shrink-0 object-contain"
               />
               <span className="flex flex-col gap-1">
                 <span className="text-sm font-normal leading-[18px] text-[#525252]">

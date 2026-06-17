@@ -13,7 +13,7 @@ export function AboutSection() {
       {/* Mobile About + Contact */}
       <div className="md:hidden">
         <div className="flex max-md:!m-0 max-md:!mt-12 flex-col items-start gap-8 self-stretch px-2">
-          <h2 className="w-full text-center text-[47px] font-medium leading-normal text-white">
+          <h2 className="w-full text-left text-[47px] font-medium leading-normal text-white">
             About
           </h2>
           <p className="text-[18px] font-normal leading-6 text-white/60">
@@ -33,10 +33,10 @@ export function AboutSection() {
           >
             <img
               src="/icons/Frame 2131327003.svg"
-              width={80}
-              height={80}
+              width={44}
+              height={44}
               alt="Email"
-              className="h-20 w-20 object-contain"
+              className="h-11 w-11 object-contain"
             />
           </a>
           <a
@@ -47,10 +47,10 @@ export function AboutSection() {
           >
             <img
               src="/icons/Frame 2131327006.svg"
-              width={80}
-              height={80}
+              width={44}
+              height={44}
               alt="Telegram"
-              className="h-20 w-20 object-contain"
+              className="h-11 w-11 object-contain"
             />
           </a>
           <a
@@ -61,10 +61,10 @@ export function AboutSection() {
           >
             <img
               src="/icons/Frame 2131327005.svg"
-              width={80}
-              height={80}
+              width={44}
+              height={44}
               alt="LinkedIn"
-              className="h-20 w-20 object-contain"
+              className="h-11 w-11 object-contain"
             />
           </a>
         </section>

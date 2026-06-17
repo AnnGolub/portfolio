@@ -9,7 +9,11 @@ export function LiveLinks({ value, className = "" }: LiveLinksProps) {
   const links = parseLiveLinks(value);
 
   if (links.length === 0) {
-    return <span className={className}>{value}</span>;
+    return (
+      <span className={`text-base font-normal leading-[26px] text-white/[0.85] ${className}`}>
+        {value}
+      </span>
+    );
   }
 
   return (
@@ -20,7 +24,7 @@ export function LiveLinks({ value, className = "" }: LiveLinksProps) {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/80 underline decoration-white/30 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
+            className="text-base font-normal leading-[26px] text-white/[0.85] underline decoration-white/30 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
           >
             {link.label}
           </a>

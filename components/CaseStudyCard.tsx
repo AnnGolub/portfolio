@@ -22,11 +22,11 @@ export function CaseStudyCard({ caseStudy, className = "" }: CaseStudyCardProps)
             aria-hidden
           />
         </div>
-        <div className="flex items-end justify-between px-2 pb-0 pt-2">
-          <span className="max-w-[55%] self-end whitespace-pre-line text-left text-[16px] font-normal leading-5 text-white">
+        <div className="flex items-start gap-2 px-2 pb-0 pt-2">
+          <span className="min-w-0 flex-1 whitespace-pre-line text-left text-[16px] font-normal leading-5 text-white">
             {caseStudy.mobileTitle}
           </span>
-          <span className="max-w-[40%] shrink-0 self-end whitespace-nowrap text-right text-[14px] font-normal leading-5 text-white/60">
+          <span className="max-w-[45%] shrink-0 break-words whitespace-normal text-right text-[14px] font-normal leading-5 text-white/60">
             {caseStudy.category}
           </span>
         </div>

@@ -2,6 +2,7 @@ type PageShellProps = {
   children: React.ReactNode;
   tone?: "base" | "elevated" | "surface";
   className?: string;
+  innerClassName?: string;
 };
 
 const tones = {
@@ -14,12 +15,13 @@ export function PageShell({
   children,
   tone = "elevated",
   className = "",
+  innerClassName = "max-w-6xl lg:max-w-[44rem]",
 }: PageShellProps) {
   return (
     <div
-      className={`min-h-screen w-full px-5 pb-20 pt-24 sm:px-8 sm:pt-28 sm:pb-28 ${tones[tone]} ${className}`}
+      className={`min-h-screen w-full overflow-x-hidden px-5 pb-20 pt-24 sm:px-8 sm:pt-28 sm:pb-28 ${tones[tone]} ${className}`}
     >
-      <div className="mx-auto w-full max-w-6xl lg:max-w-[44rem]">{children}</div>
+      <div className={`mx-auto w-full ${innerClassName}`}>{children}</div>
     </div>
   );
 }

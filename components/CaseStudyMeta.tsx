@@ -16,13 +16,13 @@ export function CaseStudyMeta({ items }: CaseStudyMetaProps) {
   ];
 
   return (
-    <dl className="grid grid-cols-1 gap-x-10 gap-y-6 pb-10 sm:grid-cols-2 sm:gap-y-8 sm:pb-12">
+    <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2">
       {sorted.map((item) => (
         <div key={item.label} className={item.label === "Live" ? "sm:col-span-2" : undefined}>
-          <dt className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40">
+          <dt className="mb-3 text-xs font-semibold uppercase tracking-[0.08em] text-white/40">
             {item.label}
           </dt>
-          <dd className="mt-2 text-sm leading-relaxed text-white/80 sm:text-base sm:leading-relaxed">
+          <dd className="text-base font-normal leading-[26px] text-white/[0.85]">
             {item.label === "Live" ? (
               <LiveLinks value={item.value} />
             ) : (
