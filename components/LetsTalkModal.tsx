@@ -62,9 +62,9 @@ export default function LetsTalkModal({ isOpen, onClose }: LetsTalkModalProps) {
           type="button"
           onClick={onClose}
           aria-label="Close"
-          className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#3a3a3a] transition-opacity hover:opacity-80"
+          className="absolute right-4 top-4 flex h-8 w-8 min-h-8 min-w-8 items-center justify-center rounded-full bg-[#525252] p-0 transition-opacity hover:opacity-80"
         >
-          <img src="/icons/Close.svg" width={32} height={32} alt="" />
+          <img src="/icons/Close.svg" width={16} height={16} alt="" />
         </button>
 
         <div className="flex items-center self-stretch px-4 pb-3 pt-4">

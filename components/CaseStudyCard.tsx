@@ -22,7 +22,7 @@ export function CaseStudyCard({ caseStudy, className = "" }: CaseStudyCardProps)
             aria-hidden
           />
         </div>
-        <div className="flex items-start gap-2 px-2 pb-0 pt-2">
+        <div className="flex items-end gap-2 px-2 pb-0 pt-2">
           <span className="min-w-0 flex-1 whitespace-pre-line text-left text-[16px] font-normal leading-5 text-white">
             {caseStudy.mobileTitle}
           </span>
