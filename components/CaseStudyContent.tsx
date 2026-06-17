@@ -17,7 +17,7 @@ export function CaseStudyContent({ content }: CaseStudyContentProps) {
     <div>
       {contentSections.map((section) => (
         <section key={section.title} className="mt-12">
-          <h2 className="mb-6 text-center text-[32px] font-medium leading-normal text-white">
+          <h2 className="mb-6 text-left text-[32px] font-medium leading-normal text-white">
             {section.title}
           </h2>
           <div className="space-y-4">
