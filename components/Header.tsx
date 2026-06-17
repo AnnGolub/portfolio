@@ -1,10 +1,11 @@
 "use client";
 
-import { AnchorLink } from "@/components/AnchorLink";
+import { letsTalkButtonClassName } from "@/components/LetsTalkLink";
+import { useLetsTalkModal } from "@/components/LetsTalkModalProvider";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { contactHref, site } from "@/data/site";
+import { site } from "@/data/site";
 
 const desktopNav = [
   { href: "/#projects", label: "Work" },
@@ -24,7 +25,7 @@ export function Header() {
   }, []);
 
   const desktopTransparent = isHome && !scrolled;
-  const contactLinkHref = isHome ? contactHref : `/${contactHref}`;
+  const { openModal } = useLetsTalkModal();
 
   return (
     <header
@@ -46,12 +47,13 @@ export function Header() {
           {site.name}
         </Link>
 
-        <AnchorLink
-          href={contactLinkHref}
-          className="font-helvetica-neue rounded-2xl bg-white px-4 py-3 text-[14px] font-bold text-black transition-opacity hover:opacity-90 md:hidden"
+        <button
+          type="button"
+          onClick={openModal}
+          className={`${letsTalkButtonClassName} md:hidden`}
         >
           Let&apos;s talk
-        </AnchorLink>
+        </button>
 
         {!isHome && (
           <Link

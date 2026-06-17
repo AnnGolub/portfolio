@@ -5,15 +5,16 @@ import type { CaseStudy } from "@/data/cases";
 
 type WorkSectionProps = {
   cases: CaseStudy[];
+  onLetsTalkClick?: () => void;
 };
 
-export function WorkSection({ cases }: WorkSectionProps) {
+export function WorkSection({ cases, onLetsTalkClick }: WorkSectionProps) {
   return (
     <section
       id="projects"
       className="scroll-mt-24 max-md:!m-0 max-md:bg-background max-md:!p-0 max-md:!py-0 bg-background py-16 sm:py-24 md:bg-gradient-to-b md:from-[#0a0a0a] md:via-surface-1 md:to-surface-2"
     >
-      <h2 className="font-helvetica-neue max-md:!mb-0 max-md:!mt-12 px-2 text-[47px] font-extrabold leading-none text-white md:hidden">
+      <h2 className="max-md:!mb-0 max-md:!mt-12 px-2 text-[47px] font-extrabold leading-none text-white md:hidden">
         Projects
       </h2>
 
@@ -35,7 +36,7 @@ export function WorkSection({ cases }: WorkSectionProps) {
       </div>
 
       <div className="flex max-md:!mb-0 max-md:!mt-12 justify-center md:hidden">
-        <LetsTalkLink />
+        <LetsTalkLink onClick={onLetsTalkClick} />
       </div>
     </section>
   );

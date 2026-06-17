@@ -1,13 +1,8 @@
 import { SectionLabel } from "@/components/SectionLabel";
 import { site } from "@/data/site";
 
-const aboutItems = [
-  "I grew up in Saint Petersburg and trained as a ballet dancer before finding my way into product design",
-  "Turns out choreography and UX have more in common than you'd think — both are about guiding people through an experience without them noticing the work behind it.",
-  "5+ years in IT, the last 3 at Alfa-Bank as a Senior Product Designer",
-  "I work on products used by millions and on the processes that make design teams function",
-  "Now based in Barcelona, looking for the next stage",
-];
+const mobileAboutText =
+  "I grew up in Saint Petersburg and trained as a ballet dancer before finding my way into product design. Turns out choreography and UX have more in common than you'd think — both are about guiding people through an experience without them noticing the work behind it. 5+ years in IT, the last 3 at Alfa-Bank as a Senior Product Designer. I work on products used by millions and on the processes that make design teams function. Now based in Barcelona, looking for the next stage.";
 
 export function AboutSection() {
   return (
@@ -15,33 +10,64 @@ export function AboutSection() {
       id="about"
       className="scroll-mt-24 max-md:!m-0 max-md:bg-background max-md:!p-0 max-md:!py-0 bg-background px-5 py-16 sm:px-8 sm:py-24"
     >
-      {/* Mobile About */}
-      <div className="max-md:!m-0 max-md:!p-0 md:hidden">
-        <h2 className="font-helvetica-neue max-md:!mb-0 max-md:!mt-12 px-2 text-[47px] font-extrabold leading-none text-white">
-          About
-        </h2>
-
-        <div className="max-md:!mb-0 max-md:!mt-6">
-          {aboutItems.map((text, index) => (
-            <div
-              key={index}
-              className={index > 0 ? "max-md:!mb-0 max-md:!mt-8" : "max-md:!m-0"}
-            >
-              <p className="font-helvetica-neue max-md:!mb-0 max-md:!mt-0 px-2 text-[28px] font-bold leading-none text-white">
-                {index + 1}
-              </p>
-              <p className="font-helvetica-neue max-md:!mb-0 max-md:!mt-2 px-2 text-[18px] font-normal leading-6 text-white/60">
-                {text}
-              </p>
-              {index < aboutItems.length - 1 && (
-                <div
-                  className="mx-2 max-md:!mb-0 max-md:!mt-8 h-px bg-white/60"
-                  aria-hidden
-                />
-              )}
-            </div>
-          ))}
+      {/* Mobile About + Contact */}
+      <div className="md:hidden">
+        <div className="flex max-md:!m-0 max-md:!mt-12 flex-col items-start gap-8 self-stretch px-2">
+          <h2 className="w-full text-center text-[47px] font-medium leading-normal text-white">
+            About
+          </h2>
+          <p className="text-[18px] font-normal leading-6 text-white/60">
+            {mobileAboutText}
+          </p>
         </div>
+
+        <section
+          id="contact"
+          className="scroll-mt-24 flex max-md:!mb-0 max-md:!mt-12 max-md:!pb-12 items-start justify-center gap-4 self-stretch px-2"
+        >
+          <a
+            href="mailto:anka.golub17@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-opacity hover:opacity-80"
+          >
+            <img
+              src="/icons/Frame 2131327003.svg"
+              width={80}
+              height={80}
+              alt="Email"
+              className="h-20 w-20 object-contain"
+            />
+          </a>
+          <a
+            href="https://t.me/golub54"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-opacity hover:opacity-80"
+          >
+            <img
+              src="/icons/Frame 2131327006.svg"
+              width={80}
+              height={80}
+              alt="Telegram"
+              className="h-20 w-20 object-contain"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/anna-golubeva-9063b9237/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-opacity hover:opacity-80"
+          >
+            <img
+              src="/icons/Frame 2131327005.svg"
+              width={80}
+              height={80}
+              alt="LinkedIn"
+              className="h-20 w-20 object-contain"
+            />
+          </a>
+        </section>
       </div>
 
       {/* Desktop About */}
@@ -64,44 +90,6 @@ export function AboutSection() {
           <p>Now based in Barcelona, looking for the next stage.</p>
         </div>
       </div>
-
-      {/* Mobile Contact */}
-      <section
-        id="contact"
-        className="max-md:!mb-0 max-md:!mt-12 max-md:!pb-12 scroll-mt-24 md:hidden"
-      >
-        <h2 className="font-helvetica-neue max-md:!mb-0 max-md:!mt-0 px-2 text-[47px] font-extrabold leading-none text-white">
-          Contact
-        </h2>
-
-        <div className="max-md:!mb-0 max-md:!mt-6">
-          <p className="font-helvetica-neue max-md:!mb-0 max-md:!mt-0 px-2 text-2xl font-bold leading-none text-white">
-            email
-          </p>
-          <a
-            href={`mailto:${site.email}`}
-            className="font-helvetica-neue max-md:!mb-0 max-md:!mt-2 block px-2 text-[18px] font-normal leading-6 text-white/60 underline transition-opacity hover:opacity-80"
-          >
-            {site.email}
-          </a>
-
-          <div className="mx-2 max-md:!mb-0 max-md:!mt-6 h-px bg-white/60" aria-hidden />
-
-          <div className="max-md:!mb-0 max-md:!mt-6">
-            <p className="font-helvetica-neue max-md:!mb-0 max-md:!mt-0 px-2 text-2xl font-bold leading-none text-white">
-              linkedin
-            </p>
-            <a
-              href={site.linkedIn}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-helvetica-neue max-md:!mb-0 max-md:!mt-2 block break-all px-2 text-[18px] font-normal leading-6 text-white/60 underline transition-opacity hover:opacity-80"
-            >
-              {site.linkedIn}
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* Desktop Contact */}
       <div className="scroll-mt-24 mx-auto mt-12 hidden max-w-6xl border-t border-white/10 pt-10 sm:mt-14 sm:pt-12 md:block lg:max-w-[44rem]">

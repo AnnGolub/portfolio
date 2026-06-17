@@ -22,7 +22,7 @@ export function CaseStudyCard({ caseStudy, className = "" }: CaseStudyCardProps)
             aria-hidden
           />
         </div>
-        <div className="font-helvetica-neue flex items-end justify-between px-2 pb-0 pt-2">
+        <div className="flex items-end justify-between px-2 pb-0 pt-2">
           <span className="max-w-[55%] self-end whitespace-pre-line text-left text-[16px] font-normal leading-5 text-white">
             {caseStudy.mobileTitle}
           </span>

@@ -31,6 +31,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   overscroll-behavior: none;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 @media (max-width: 767px) {
@@ -60,10 +61,6 @@ body {
 
   .animate-cursor-blink {
     animation: cursor-blink 1s step-end infinite;
-  }
-
-  .font-helvetica-neue {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 }
 

@@ -3,12 +3,16 @@ import { MobileHeroNav } from "@/components/MobileHeroNav";
 import { TypewriterText } from "@/components/TypewriterText";
 import { site } from "@/data/site";
 
-export function Hero() {
+type HeroProps = {
+  onLetsTalkClick?: () => void;
+};
+
+export function Hero({ onLetsTalkClick }: HeroProps) {
   return (
     <section className="relative min-h-[100dvh] overflow-hidden max-md:!mb-0 max-md:!mt-0 max-md:bg-transparent max-md:!p-0 bg-[#0a0a0a] md:h-screen">
       {/* Mobile */}
       <div className="relative h-[100dvh] md:hidden">
-        <MobileHeroNav />
+        <MobileHeroNav onLetsTalkClick={onLetsTalkClick} />
         <img
           src="/MainBanner.jpg"
           alt=""
@@ -16,7 +20,7 @@ export function Hero() {
           aria-hidden
         />
         <div className="absolute bottom-2 left-0 right-0 z-10 px-2">
-          <h1 className="hero-mobile-name font-helvetica-neue text-center font-extrabold leading-none text-white">
+          <h1 className="hero-mobile-name text-center font-extrabold leading-none text-white">
             {site.name}
           </h1>
         </div>

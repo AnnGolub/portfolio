@@ -1,18 +1,22 @@
 "use client";
 
 import { AnchorLink } from "@/components/AnchorLink";
-import { contactHref } from "@/data/site";
+import { letsTalkButtonClassName } from "@/components/LetsTalkLink";
 
 const mobileNav = [
   { href: "#projects", label: "Projects" },
   { href: "#about", label: "About" },
 ];
 
-export function MobileHeroNav() {
+type MobileHeroNavProps = {
+  onLetsTalkClick?: () => void;
+};
+
+export function MobileHeroNav({ onLetsTalkClick }: MobileHeroNavProps) {
   return (
     <header className="absolute inset-x-0 top-0 z-20 border-transparent bg-transparent">
       <div className="flex items-center justify-between px-2 pb-0 pt-6">
-        <nav className="font-helvetica-neue flex items-center gap-6">
+        <nav className="flex items-center gap-6">
           {mobileNav.map((item) => (
             <AnchorLink
               key={item.href}
@@ -24,12 +28,13 @@ export function MobileHeroNav() {
           ))}
         </nav>
 
-        <AnchorLink
-          href={contactHref}
-          className="font-helvetica-neue rounded-2xl bg-white px-4 py-3 text-[14px] font-bold text-black transition-opacity hover:opacity-90"
+        <button
+          type="button"
+          onClick={onLetsTalkClick}
+          className={letsTalkButtonClassName}
         >
           Let&apos;s talk
-        </AnchorLink>
+        </button>
       </div>
     </header>
   );

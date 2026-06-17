@@ -1,28 +1,20 @@
 "use client";
 
-import { AnchorLink } from "@/components/AnchorLink";
-import { contactHref } from "@/data/site";
-import { usePathname } from "next/navigation";
-
 export const letsTalkButtonClassName =
-  "font-helvetica-neue inline-block rounded-2xl bg-white px-4 py-3 text-[14px] font-bold text-black transition-opacity hover:opacity-90";
+  "flex cursor-pointer items-center justify-center gap-[10px] rounded-xl border-none bg-white px-[14px] py-[10px] text-center text-[14px] font-bold leading-normal text-[#212121] transition-opacity hover:opacity-90";
 
 type LetsTalkLinkProps = {
   className?: string;
-  href?: string;
+  onClick?: () => void;
 };
 
 export function LetsTalkLink({
   className = letsTalkButtonClassName,
-  href = contactHref,
+  onClick,
 }: LetsTalkLinkProps) {
-  const pathname = usePathname();
-  const linkHref =
-    href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
-
   return (
-    <AnchorLink href={linkHref} className={className}>
+    <button type="button" onClick={onClick} className={className}>
       Let&apos;s talk
-    </AnchorLink>
+    </button>
   );
 }
