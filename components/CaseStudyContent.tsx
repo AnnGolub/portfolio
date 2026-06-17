@@ -2,7 +2,6 @@ import {
   parseCaseContent,
   splitSectionParagraphs,
 } from "@/lib/parseCaseContent";
-import { Fragment } from "react";
 
 type CaseStudyContentProps = {
   content: string;
@@ -15,31 +14,23 @@ export function CaseStudyContent({ content }: CaseStudyContentProps) {
   if (contentSections.length === 0) return null;
 
   return (
-    <div className="mt-12">
-      {contentSections.map((section, index) => (
-        <Fragment key={section.title}>
-          {index > 0 && (
-            <hr
-              className="mb-10 border-0 border-t border-white/10"
-              aria-hidden
-            />
-          )}
-          <section>
-            <h2 className="mb-3 text-xs font-semibold uppercase tracking-[0.08em] text-white/40">
-              {section.title}
-            </h2>
-            <div className="space-y-4">
-              {splitSectionParagraphs(section.body).map((paragraph, i) => (
-                <p
-                  key={i}
-                  className="text-base font-normal leading-[26px] text-white/[0.85]"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </section>
-        </Fragment>
+    <div>
+      {contentSections.map((section) => (
+        <section key={section.title} className="mt-12">
+          <h2 className="mb-6 text-center text-[32px] font-medium leading-normal text-white">
+            {section.title}
+          </h2>
+          <div className="space-y-4">
+            {splitSectionParagraphs(section.body).map((paragraph, i) => (
+              <p
+                key={i}
+                className="text-[18px] font-normal leading-6 text-white/60"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </section>
       ))}
     </div>
   );

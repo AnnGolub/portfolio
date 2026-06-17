@@ -15,6 +15,7 @@ const desktopNav = [
 export function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isWorkRoute = pathname.startsWith("/work");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -26,6 +27,10 @@ export function Header() {
 
   const desktopTransparent = isHome && !scrolled;
   const { openModal } = useLetsTalkModal();
+
+  if (isWorkRoute) {
+    return null;
+  }
 
   return (
     <header

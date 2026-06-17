@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CaseStudyBackButton } from "@/components/CaseStudyBackButton";
+import { CaseStudyTopBar } from "@/components/CaseStudyTopBar";
 import { CaseStudyContent } from "@/components/CaseStudyContent";
 import { CaseStudyLinks } from "@/components/CaseStudyLinks";
 import { CaseStudyStats } from "@/components/CaseStudyStats";
@@ -44,12 +44,8 @@ export default function CaseStudyPage({ params }: PageProps) {
   );
 
   return (
-    <PageShell
-      tone="base"
-      className="!px-4 sm:!px-4"
-      innerClassName="max-w-full"
-    >
-      <CaseStudyBackButton />
+    <PageShell tone="base" caseStudy innerClassName="max-w-full">
+      <CaseStudyTopBar />
 
       <h1 className="mt-6 text-[47px] font-medium leading-normal text-white">
         {caseStudy.title}
