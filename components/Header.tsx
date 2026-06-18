@@ -28,7 +28,7 @@ export function Header() {
   const desktopTransparent = isHome && !scrolled;
   const { openModal } = useLetsTalkModal();
 
-  if (isWorkRoute) {
+  if (isWorkRoute || isHome) {
     return null;
   }
 

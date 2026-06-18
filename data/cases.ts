@@ -9,6 +9,7 @@ export type CaseStudy = {
   mobileTitle: string;
   slug: string;
   image: string;
+  desktopImage: string;
   category: string;
   description: string;
   tags: string[];
@@ -22,6 +23,7 @@ export const cases: CaseStudy[] = [
     mobileTitle: "Precious Metals\nStorefront",
     slug: "metals",
     image: "/Pic.jpg",
+    desktopImage: "/D_Pic.jpg",
     category: "Fintech & E-Commerce",
     description:
       "Designing a new digital sales channel for precious metals from zero",
@@ -70,6 +72,7 @@ LIVE
     mobileTitle: "Unified Design\nProcess",
     slug: "design-process",
     image: "/Pic-1.jpg",
+    desktopImage: "/D_Pic-1.jpg",
     category: "Systems & Leadership",
     description:
       "Building a design process framework for a team of 30+ designers",
@@ -119,6 +122,7 @@ Framework adopted across all 15 product teams. Used as primary onboarding materi
     mobileTitle: "Product Basket\nForm",
     slug: "basket",
     image: "/Pic-2.jpg",
+    desktopImage: "/D_Pic-2.jpg",
     category: "Fintech & Research",
     description:
       "Iterative redesign of a debit card application flow with cross-sell basket",

@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { MobileHeroNav } from "@/components/MobileHeroNav";
-import { TypewriterText } from "@/components/TypewriterText";
+import { desktopLetsTalkButtonClassName } from "@/components/LetsTalkLink";
 import { site } from "@/data/site";
 
 type HeroProps = {
@@ -9,9 +8,9 @@ type HeroProps = {
 
 export function Hero({ onLetsTalkClick }: HeroProps) {
   return (
-    <section className="relative min-h-[100dvh] overflow-hidden max-md:!mb-0 max-md:!mt-0 max-md:bg-transparent max-md:!p-0 bg-[#0a0a0a] md:h-screen">
+    <section className="relative max-lg:min-h-[100dvh] max-lg:overflow-hidden max-lg:!mb-0 max-lg:!mt-0 max-lg:bg-transparent max-lg:!p-0 bg-[#0a0a0a] lg:w-full lg:self-stretch">
       {/* Mobile */}
-      <div className="relative h-[100dvh] md:hidden">
+      <div className="relative h-[100dvh] lg:hidden">
         <MobileHeroNav onLetsTalkClick={onLetsTalkClick} />
         <img
           src="/MainBanner.jpg"
@@ -27,32 +26,32 @@ export function Hero({ onLetsTalkClick }: HeroProps) {
       </div>
 
       {/* Desktop */}
-      <div className="hidden h-full md:grid md:grid-cols-2">
-        <div className="flex flex-col justify-center px-8 lg:px-16">
-          <h1 className="text-6xl font-black tracking-tight text-white lg:text-8xl">
+      <div className="hidden lg:block lg:mt-[72px] lg:w-[1296px]">
+        <div className="relative h-[654px] w-full">
+          <img
+            src="/Main.png"
+            alt=""
+            className="h-full w-full rounded-none object-cover"
+            aria-hidden
+          />
+          <h1 className="absolute bottom-[-38px] left-0 right-0 text-center text-[180px] font-medium leading-normal text-white">
             {site.name}
           </h1>
-          <TypewriterText
-            text={site.tagline}
-            speed={50}
-            className="mt-4 max-w-md text-left text-lg leading-relaxed text-white/70"
-          />
-          <Link
-            href="#projects"
-            className="mt-8 inline-flex w-fit rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
-          >
-            View work
-          </Link>
         </div>
 
-        <div className="flex items-center justify-end px-8 lg:px-16">
-          <img
-            src="/photo.jpg"
-            alt="Anna Golubeva"
-            width={400}
-            height={500}
-            className="h-[500px] max-h-[85vh] w-auto max-w-full rounded-2xl object-cover object-top"
-          />
+        <div className="mt-[38px]">
+          <p className="mt-[72px] text-center text-lg font-normal leading-6 text-white/60">
+            {site.mobileTagline}
+          </p>
+          <div className="mt-6 flex justify-center">
+            <button
+              type="button"
+              onClick={onLetsTalkClick}
+              className={desktopLetsTalkButtonClassName}
+            >
+              Let&apos;s talk
+            </button>
+          </div>
         </div>
       </div>
     </section>
