@@ -55,10 +55,10 @@ export default function CaseStudyPage({ params }: PageProps) {
         <img
           src={caseStudy.image}
           alt=""
-          className="mt-6 w-full rounded-xl object-cover"
+          className="mt-6 w-full rounded-none object-cover"
         />
       ) : (
-        <div className="mt-6 h-60 w-full rounded-xl bg-[#1a1a1a]" aria-hidden />
+        <div className="mt-6 h-60 w-full rounded-none bg-[#1a1a1a]" aria-hidden />
       )}
 
       <CaseStudyLinks links={liveLinks} />

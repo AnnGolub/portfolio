@@ -10,7 +10,7 @@ export function CaseStudyStats({ stats }: CaseStudyStatsProps) {
   return (
     <section
       aria-label="Key metrics"
-      className="mt-12 flex w-full flex-col gap-6 rounded-2xl bg-[#212121] p-4"
+      className="mt-12 flex w-full flex-col gap-6 rounded-none bg-[#212121] p-4"
     >
       {stats.map((stat) => (
         <div
@@ -20,7 +20,7 @@ export function CaseStudyStats({ stats }: CaseStudyStatsProps) {
           <p className="shrink-0 whitespace-nowrap text-[32px] font-medium leading-normal text-white">
             {stat.value}
           </p>
-          <p className="max-w-[50%] text-right text-sm font-normal leading-[18px] text-white/60">
+          <p className="max-w-[120px] break-words whitespace-normal text-right text-sm font-normal leading-[18px] text-white/60">
             {stat.label}
           </p>
         </div>

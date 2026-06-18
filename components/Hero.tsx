@@ -20,7 +20,7 @@ export function Hero({ onLetsTalkClick }: HeroProps) {
           aria-hidden
         />
         <div className="absolute bottom-2 left-0 right-0 z-10 px-2">
-          <h1 className="hero-mobile-name text-center font-extrabold leading-none text-white">
+          <h1 className="hero-mobile-name text-center text-[47px] font-medium leading-normal text-white">
             {site.name}
           </h1>
         </div>

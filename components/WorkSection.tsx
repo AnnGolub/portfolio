@@ -14,7 +14,7 @@ export function WorkSection({ cases, onLetsTalkClick }: WorkSectionProps) {
       id="projects"
       className="scroll-mt-24 max-md:!m-0 max-md:bg-background max-md:!p-0 max-md:!py-0 bg-background py-16 sm:py-24 md:bg-gradient-to-b md:from-[#0a0a0a] md:via-surface-1 md:to-surface-2"
     >
-      <h2 className="max-md:!mb-0 max-md:!mt-12 px-2 text-[47px] font-extrabold leading-none text-white md:hidden">
+      <h2 className="max-md:!mb-0 max-md:!mt-12 px-2 text-[47px] font-medium leading-normal text-white md:hidden">
         Projects
       </h2>
 

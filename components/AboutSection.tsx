@@ -23,7 +23,7 @@ export function AboutSection() {
 
         <section
           id="contact"
-          className="scroll-mt-24 flex max-md:!mb-0 max-md:!mt-12 max-md:!pb-12 items-start justify-center gap-4 self-stretch px-2"
+          className="scroll-mt-24 flex max-md:!mb-0 max-md:!mt-12 max-md:!pb-12 items-start justify-start gap-4 self-stretch pl-2 pr-2"
         >
           <a
             href="mailto:anka.golub17@gmail.com"
