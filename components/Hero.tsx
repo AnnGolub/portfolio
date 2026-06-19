@@ -27,20 +27,17 @@ export function Hero({ onLetsTalkClick }: HeroProps) {
 
       {/* Desktop */}
       <div className="hidden lg:block lg:mt-[72px] lg:w-[1296px]">
-        <div className="relative h-[654px] w-full">
+        <div className="h-[654px] w-full">
           <img
             src="/Main.png"
             alt=""
-            className="h-full w-full rounded-none object-cover"
+            className="h-full w-full object-cover"
             aria-hidden
           />
-          <h1 className="absolute bottom-[-38px] left-0 right-0 text-center text-[180px] font-medium leading-normal text-white">
-            {site.name}
-          </h1>
         </div>
 
-        <div className="mt-[38px]">
-          <p className="mt-[72px] text-center text-lg font-normal leading-6 text-white/60">
+        <div className="mt-0">
+          <p className="mx-auto mt-[72px] max-w-[384px] text-center text-lg font-normal leading-6 text-white/60">
             {site.mobileTagline}
           </p>
           <div className="mt-6 flex justify-center">

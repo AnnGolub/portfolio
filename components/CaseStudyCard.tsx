@@ -16,7 +16,7 @@ export function CaseStudyCard({
     return (
       <Link
         href={`/work/${caseStudy.slug}`}
-        className={`group block w-[384px] shrink-0 ${className}`}
+        className={`block w-[384px] shrink-0 cursor-pointer transition-transform duration-300 hover:scale-105 ${className}`}
       >
         <img
           src={caseStudy.desktopImage}
@@ -26,8 +26,10 @@ export function CaseStudyCard({
           aria-hidden
         />
         <div className="mt-4 flex items-end justify-between">
-          <span className="text-base font-normal text-white">{caseStudy.title}</span>
-          <span className="text-base font-normal text-white/60">
+          <span className="max-w-[60%] whitespace-normal break-words text-base font-normal text-white">
+            {caseStudy.title}
+          </span>
+          <span className="self-end whitespace-nowrap text-base font-normal text-white/60">
             {caseStudy.category}
           </span>
         </div>

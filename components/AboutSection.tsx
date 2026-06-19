@@ -1,33 +1,37 @@
+"use client";
+
+import { useState } from "react";
 import { site } from "@/data/site";
 
 const mobileAboutText =
   "I grew up in Saint Petersburg and trained as a ballet dancer before finding my way into product design. Turns out choreography and UX have more in common than you'd think — both are about guiding people through an experience without them noticing the work behind it. 5+ years in IT, the last 3 at Alfa-Bank as a Senior Product Designer. I work on products used by millions and on the processes that make design teams function. Now based in Barcelona, looking for the next stage.";
 
-const desktopAboutParagraphs = [
-  "I grew up in Saint Petersburg and trained as a ballet dancer before finding my way into product design",
-  "Turns out choreography and UX have more in common than you'd think — both are about guiding people through an experience without them noticing the work behind it.",
-  "5+ years in IT, the last 3 at Alfa-Bank as a Senior Product Designer",
-  "I work on products used by millions and on the processes that make design teams function",
-  "Now based in Barcelona, looking for the next stage",
-];
-
 function ContactIcons() {
+  const [copied, setCopied] = useState(false);
+
+  const handleEmailClick = () => {
+    navigator.clipboard.writeText("anka.golub17@gmail.com").then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    });
+  };
+
   return (
     <>
-      <a
-        href="mailto:anka.golub17@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        type="button"
+        onClick={handleEmailClick}
         className="transition-opacity hover:opacity-80"
+        aria-label="Copy email address"
       >
         <img
-          src="/icons/Frame 2131327003.svg"
+          src={copied ? "/icons/Icon.Success.png" : "/icons/Frame 2131327003.png"}
           width={44}
           height={44}
           alt="Email"
           className="h-11 w-11 object-contain"
         />
-      </a>
+      </button>
       <a
         href="https://t.me/golub54"
         target="_blank"
@@ -35,7 +39,7 @@ function ContactIcons() {
         className="transition-opacity hover:opacity-80"
       >
         <img
-          src="/icons/Frame 2131327006.svg"
+          src="/icons/Frame 2131327006.png"
           width={44}
           height={44}
           alt="Telegram"
@@ -49,7 +53,7 @@ function ContactIcons() {
         className="transition-opacity hover:opacity-80"
       >
         <img
-          src="/icons/Frame 2131327005.svg"
+          src="/icons/Frame 2131327005.png"
           width={44}
           height={44}
           alt="LinkedIn"
@@ -91,11 +95,9 @@ export function AboutSection() {
           About
         </h2>
 
-        <div className="space-y-6 text-lg font-normal leading-6 text-white/60">
-          {desktopAboutParagraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
+        <p className="text-lg font-normal leading-6 text-white/60">
+          I grew up in Saint Petersburg and trained as a ballet dancer before finding my way into product design. Turns out choreography and UX have more in common than you&apos;d think — both are about guiding people through an experience without them noticing the work behind it. 5+ years in IT, the last 3 at Alfa-Bank as a Senior Product Designer. I work on products used by millions and on the processes that make design teams function. Now based in Barcelona, looking for the next stage.
+        </p>
 
         <section
           id="contact"
