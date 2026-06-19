@@ -1,37 +1,29 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 type LetsTalkModalProps = {
   isOpen: boolean;
   onClose: () => void;
 };
 
-const contactRows = [
-  {
-    icon: "/icons/sms.svg",
-    label: "email",
-    value: "anka.golub17@gmail.com",
-    href: "mailto:anka.golub17@gmail.com",
-    external: false,
-  },
-  {
-    icon: "/icons/sms-1.svg",
-    label: "telegram",
-    value: "golub54",
-    href: "https://t.me/golub54",
-    external: true,
-  },
-  {
-    icon: "/icons/sms-2.svg",
-    label: "linkedin",
-    value: "Anna Golubeva",
-    href: "https://www.linkedin.com/in/anna-golubeva-9063b9237/",
-    external: true,
-  },
-];
+const telegramRow = {
+  icon: "/icons/sms-1.svg",
+  label: "telegram",
+  value: "golub54",
+  href: "https://t.me/golub54",
+};
+
+const linkedinRow = {
+  icon: "/icons/sms-2.svg",
+  label: "linkedin",
+  value: "Anna Golubeva",
+  href: "https://www.linkedin.com/in/anna-golubeva-9063b9237/",
+};
 
 export default function LetsTalkModal({ isOpen, onClose }: LetsTalkModalProps) {
+  const [emailCopied, setEmailCopied] = useState(false);
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -45,6 +37,13 @@ export default function LetsTalkModal({ isOpen, onClose }: LetsTalkModalProps) {
 
   if (!isOpen) return null;
 
+  const handleEmailClick = () => {
+    navigator.clipboard.writeText("anka.golub17@gmail.com").then(() => {
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 1500);
+    });
+  };
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
@@ -52,7 +51,7 @@ export default function LetsTalkModal({ isOpen, onClose }: LetsTalkModalProps) {
       role="presentation"
     >
       <div
-        className="relative flex w-[328px] flex-col rounded-2xl bg-[#212121]"
+        className="relative flex w-[calc(100vw-40px)] max-w-[328px] flex-col rounded-2xl bg-[#212121]"
         onClick={(event) => event.stopPropagation()}
         role="dialog"
         aria-modal="true"
@@ -77,32 +76,76 @@ export default function LetsTalkModal({ isOpen, onClose }: LetsTalkModalProps) {
         </div>
 
         <div className="flex flex-col items-start gap-4 self-stretch px-4 pb-4">
-          {contactRows.map((row) => (
-            <a
-              key={row.label}
-              href={row.href}
-              {...(row.external
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-              className="flex items-center gap-2 self-stretch transition-opacity hover:opacity-80"
-            >
-              <img
-                src={row.icon}
-                alt=""
-                width={20}
-                height={20}
-                className="h-5 w-5 shrink-0 object-contain"
-              />
-              <span className="flex flex-col gap-1">
-                <span className="text-sm font-normal leading-[18px] text-[#525252]">
-                  {row.label}
-                </span>
-                <span className="text-base font-normal leading-6 text-white">
-                  {row.value}
-                </span>
+          {/* Email — copy to clipboard */}
+          <button
+            type="button"
+            onClick={handleEmailClick}
+            className="flex items-center gap-2 self-stretch transition-opacity hover:opacity-80"
+          >
+            <img
+              src={emailCopied ? "/Success.svg" : "/icons/sms.svg"}
+              alt=""
+              width={20}
+              height={20}
+              className="h-5 w-5 shrink-0 object-contain"
+            />
+            <span className="flex flex-col gap-1 text-left">
+              <span className="text-sm font-normal leading-[18px] text-[#525252]">
+                email
               </span>
-            </a>
-          ))}
+              <span className="text-base font-normal leading-6 text-white">
+                anka.golub17@gmail.com
+              </span>
+            </span>
+          </button>
+
+          {/* Telegram */}
+          <a
+            href={telegramRow.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 self-stretch transition-opacity hover:opacity-80"
+          >
+            <img
+              src={telegramRow.icon}
+              alt=""
+              width={20}
+              height={20}
+              className="h-5 w-5 shrink-0 object-contain"
+            />
+            <span className="flex flex-col gap-1">
+              <span className="text-sm font-normal leading-[18px] text-[#525252]">
+                {telegramRow.label}
+              </span>
+              <span className="text-base font-normal leading-6 text-white">
+                {telegramRow.value}
+              </span>
+            </span>
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href={linkedinRow.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 self-stretch transition-opacity hover:opacity-80"
+          >
+            <img
+              src={linkedinRow.icon}
+              alt=""
+              width={20}
+              height={20}
+              className="h-5 w-5 shrink-0 object-contain"
+            />
+            <span className="flex flex-col gap-1">
+              <span className="text-sm font-normal leading-[18px] text-[#525252]">
+                {linkedinRow.label}
+              </span>
+              <span className="text-base font-normal leading-6 text-white">
+                {linkedinRow.value}
+              </span>
+            </span>
+          </a>
         </div>
       </div>
     </div>
