@@ -3,7 +3,7 @@ import type Lenis from "@studio-freight/lenis";
 export const LENIS_EASING = (t: number) =>
   Math.min(1, 1.001 - Math.pow(2, -10 * t));
 
-export const LENIS_DURATION = 4.0;
+export const LENIS_DURATION = 1.2;
 export const LENIS_ANCHOR_DURATION = 2;
 
 const MOBILE_MEDIA_QUERY = "(max-width: 767px)";

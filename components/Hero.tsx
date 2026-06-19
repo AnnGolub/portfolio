@@ -26,7 +26,7 @@ export function Hero({ onLetsTalkClick }: HeroProps) {
       </div>
 
       {/* Desktop */}
-      <div className="hidden lg:block lg:mt-[72px] lg:w-[1296px]">
+      <div className="hidden lg:block lg:w-[1296px]">
         <div className="h-[654px] w-full">
           <img
             src="/Main.png"

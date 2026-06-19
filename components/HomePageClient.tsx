@@ -21,8 +21,10 @@ export function HomePageClient({ cases }: HomePageClientProps) {
       <HashScrollOnLoad />
       <div className="lg:mx-auto lg:flex lg:max-w-[1440px] lg:flex-col lg:items-center lg:gap-32 lg:overflow-x-hidden lg:bg-[#0A0A0A] lg:px-[72px] lg:pb-[72px]">
         <div className="lg:flex lg:w-full lg:max-w-[1296px] lg:flex-col lg:items-center lg:gap-32">
-          <DesktopHomeHeader />
-          <Hero onLetsTalkClick={openModal} />
+          <div className="lg:flex lg:w-full lg:flex-col lg:items-center lg:gap-[72px]">
+            <DesktopHomeHeader />
+            <Hero onLetsTalkClick={openModal} />
+          </div>
           <MobileHeroIntro onLetsTalkClick={openModal} />
           <WorkSection cases={cases} onLetsTalkClick={openModal} />
           <AboutSection />
