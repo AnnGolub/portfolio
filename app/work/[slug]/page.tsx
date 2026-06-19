@@ -44,7 +44,7 @@ export default function CaseStudyPage({ params }: PageProps) {
   );
 
   return (
-    <PageShell tone="base" caseStudy innerClassName="max-w-full">
+    <PageShell tone="base" caseStudy innerClassName="max-w-[1296px]">
       <CaseStudyTopBar />
 
       <h1 className="mt-6 text-[47px] font-medium leading-normal text-white">
