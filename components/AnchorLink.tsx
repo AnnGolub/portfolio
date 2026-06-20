@@ -30,6 +30,14 @@ export function AnchorLink({
       event.preventDefault();
       scrollToAnchor(hash);
       window.history.pushState(null, "", hash);
+    } else if (!isMobileViewport()) {
+      const id = hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        event.preventDefault();
+        element.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState(null, "", hash);
+      }
     }
   };
 

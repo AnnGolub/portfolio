@@ -88,11 +88,11 @@ export function WorkSection({ cases, onLetsTalkClick }: WorkSectionProps) {
                   className="h-auto w-full rounded-none object-cover"
                   aria-hidden
                 />
-                <div className="mt-2 flex items-end justify-between">
-                  <span className="max-w-[60%] whitespace-normal break-words text-[24px] font-normal leading-normal text-white">
-                    {caseStudy.title}
+                <div className="mt-2 flex items-end justify-between gap-2">
+                  <span className="min-w-0 flex-1 whitespace-pre-line text-[24px] font-normal leading-normal text-white">
+                    {caseStudy.mobileTitle}
                   </span>
-                  <span className="self-end whitespace-nowrap text-[24px] font-normal leading-normal text-white/60">
+                  <span className="shrink-0 self-end whitespace-nowrap text-[24px] font-normal leading-normal text-white/60">
                     {caseStudy.category}
                   </span>
                 </div>

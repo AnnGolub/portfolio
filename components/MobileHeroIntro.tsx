@@ -1,5 +1,4 @@
-import { LetsTalkLink, mobileHeroLetsTalkButtonClassName } from "@/components/LetsTalkLink";
-import { site } from "@/data/site";
+import { LetsTalkLink } from "@/components/LetsTalkLink";
 
 type MobileHeroIntroProps = {
   onLetsTalkClick?: () => void;
@@ -8,11 +7,14 @@ type MobileHeroIntroProps = {
 export function MobileHeroIntro({ onLetsTalkClick }: MobileHeroIntroProps) {
   return (
     <div className="max-lg:!m-0 max-lg:!p-0 lg:hidden">
-      <p className="max-lg:!mb-0 max-lg:!mt-12 px-2 text-center text-[18px] font-normal leading-6 text-white/60 whitespace-pre-line">
-        {site.mobileTagline}
+      <p className="max-lg:!mb-0 max-lg:!mt-12 px-2 text-center text-[18px] font-normal leading-6 text-white/60">
+        Senior Product Designer in fintech,<br />
+        building products used by millions —<br />
+        and the processes that make design<br />
+        teams work
       </p>
       <div className="flex max-lg:!mb-0 max-lg:!mt-6 justify-center">
-        <LetsTalkLink onClick={onLetsTalkClick} className={mobileHeroLetsTalkButtonClassName} />
+        <LetsTalkLink onClick={onLetsTalkClick} />
       </div>
     </div>
   );

@@ -131,7 +131,7 @@ export default function LetsTalkModal({ isOpen, onClose }: LetsTalkModalProps) {
               className="flex items-center gap-4 self-stretch transition-opacity hover:opacity-80"
             >
               <img
-                src={emailCopied ? "/Icon. Success.png" : "/maildesk.svg"}
+                src={emailCopied ? "/DSuccess.svg" : "/maildesk.svg"}
                 alt=""
                 width={24}
                 height={24}

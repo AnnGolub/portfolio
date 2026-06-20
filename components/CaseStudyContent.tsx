@@ -17,10 +17,22 @@ function renderParagraph(paragraph: string, index: number) {
     const filename = paragraph.slice(7, -1);
     return (
       <div key={index} className="mt-6">
-        <img
+        <img src={`/${filename}`} alt="" className="w-full rounded-none" />
+      </div>
+    );
+  }
+
+  if (paragraph.startsWith("[VIDEO:") && paragraph.endsWith("]")) {
+    const filename = paragraph.slice(7, -1);
+    return (
+      <div key={index} className="mt-6">
+        <video
           src={`/${filename}`}
-          alt=""
           className="w-full rounded-none"
+          autoPlay
+          muted
+          loop
+          playsInline
         />
       </div>
     );

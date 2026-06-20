@@ -79,7 +79,7 @@ LIVE
     mobileTitle: "Unified design\nprocess",
     slug: "design-process",
     image: "/Pic-1.jpg",
-    desktopImage: "/D_Pic-1.jpg",
+    desktopImage: "/D_PicNew-1.jpg",
     category: "Systems & Leadership",
     description:
       "Building a design process framework for a team of 30+ designers",
@@ -179,11 +179,11 @@ Mid 2024 — team expanded with marketing, researchers, motional designer. 2 des
 
 [HEADING:1st design for test]
 
-[IMAGE:testdesign1.jpg]
+[VIDEO:TestVideo1.mov]
 
 [HEADING:2nd design for test]
 
-[IMAGE:testdesign2.jpg]
+[VIDEO:TestVideo2.mov]
 
 [SPACER]
 
