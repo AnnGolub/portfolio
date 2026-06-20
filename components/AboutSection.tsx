@@ -70,7 +70,7 @@ export function AboutSection() {
       id="about"
       className="scroll-mt-24 max-lg:!m-0 max-lg:bg-background max-lg:!p-0 max-lg:!py-0 bg-background lg:w-full lg:self-stretch"
     >
-      {/* Mobile About + Contact */}
+      {/* Mobile */}
       <div className="lg:hidden">
         <div className="flex max-lg:!m-0 max-lg:!mt-12 flex-col items-start gap-8 self-stretch px-2">
           <h2 className="w-full text-left text-[47px] font-medium leading-normal text-white">
@@ -91,26 +91,32 @@ export function AboutSection() {
         </section>
       </div>
 
-      {/* Desktop About + Contact */}
-      <div className="hidden lg:block">
-        <h2 className="mb-[72px] text-[47px] font-medium leading-normal text-white">
-          About me
-        </h2>
-
-        <div className="space-y-6">
-          {aboutText.split("\n\n").map((para, i) => (
-            <p key={i} className="text-lg font-normal leading-6 text-white/60">
-              {para}
-            </p>
-          ))}
+      {/* Desktop: two-column layout */}
+      <div className="hidden lg:flex lg:w-full lg:items-start lg:gap-6">
+        {/* Left: heading */}
+        <div className="w-[636px] shrink-0">
+          <h2 className="text-[64px] font-medium leading-normal text-white">
+            About me
+          </h2>
         </div>
 
-        <section
-          id="contact"
-          className="mt-[72px] flex flex-row justify-start gap-4"
-        >
-          <ContactIcons />
-        </section>
+        {/* Right: text + icons */}
+        <div className="flex w-[636px] shrink-0 flex-col">
+          <div className="flex flex-col gap-6">
+            {aboutText.split("\n\n").map((para, i) => (
+              <p key={i} className="text-[24px] font-normal leading-normal text-white/60">
+                {para}
+              </p>
+            ))}
+          </div>
+
+          <section
+            id="contact"
+            className="mt-[72px] flex flex-row gap-4"
+          >
+            <ContactIcons />
+          </section>
+        </div>
       </div>
 
       <p className="sr-only">{site.name}</p>

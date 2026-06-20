@@ -19,7 +19,7 @@ export function HomePageClient({ cases }: HomePageClientProps) {
   return (
     <>
       <HashScrollOnLoad />
-      <div className="lg:mx-auto lg:flex lg:max-w-[1440px] lg:flex-col lg:items-center lg:gap-32 lg:overflow-x-hidden lg:bg-[#0A0A0A] lg:px-[72px] lg:pb-[72px]">
+      <div className="lg:mx-auto lg:flex lg:max-w-[1440px] lg:flex-col lg:items-center lg:gap-32 lg:overflow-x-hidden lg:bg-[#0A0A0A] lg:px-[72px] lg:pb-[128px]">
         <div className="lg:flex lg:w-full lg:max-w-[1296px] lg:flex-col lg:items-center lg:gap-32">
           <div className="lg:flex lg:w-full lg:flex-col lg:items-center lg:gap-[72px]">
             <DesktopHomeHeader />
