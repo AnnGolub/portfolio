@@ -29,26 +29,24 @@ export function Hero({ onLetsTalkClick }: HeroProps) {
       <div className="hidden lg:block lg:w-[1296px]">
         <div className="h-[654px] w-full">
           <img
-            src="/Main.png"
+            src="/MainNew.png"
             alt=""
             className="h-full w-full object-cover"
             aria-hidden
           />
         </div>
 
-        <div className="mt-0">
-          <p className="mx-auto mt-[72px] max-w-[384px] text-center text-lg font-normal leading-6 text-white/60">
+        <div className="mt-[72px] flex flex-col items-center gap-6">
+          <p className="mx-auto max-w-[856px] text-center text-[24px] font-normal leading-normal text-white/60">
             {site.mobileTagline}
           </p>
-          <div className="mt-6 flex justify-center">
-            <button
-              type="button"
-              onClick={onLetsTalkClick}
-              className={desktopLetsTalkButtonClassName}
-            >
-              Let&apos;s talk
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={onLetsTalkClick}
+            className={desktopLetsTalkButtonClassName}
+          >
+            Let&apos;s talk
+          </button>
         </div>
       </div>
     </section>

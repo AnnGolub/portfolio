@@ -72,12 +72,12 @@ export function AboutSection() {
     >
       {/* Mobile About + Contact */}
       <div className="lg:hidden">
-        <div className="flex max-lg:!m-0 max-lg:!mt-12 flex-col items-center gap-8 self-stretch px-2">
-          <h2 className="w-full text-center text-[47px] font-medium leading-normal text-white">
+        <div className="flex max-lg:!m-0 max-lg:!mt-12 flex-col items-start gap-8 self-stretch px-2">
+          <h2 className="w-full text-left text-[47px] font-medium leading-normal text-white">
             About me
           </h2>
           {aboutText.split("\n\n").map((para, i) => (
-            <p key={i} className="text-center text-[18px] font-normal leading-6 text-white/60">
+            <p key={i} className="text-[18px] font-normal leading-6 text-white/60">
               {para}
             </p>
           ))}
@@ -85,7 +85,7 @@ export function AboutSection() {
 
         <section
           id="contact"
-          className="scroll-mt-24 flex max-lg:!mb-0 max-lg:!mt-12 max-lg:!pb-12 items-start justify-center gap-4 self-stretch px-2"
+          className="scroll-mt-24 flex max-lg:!mb-0 max-lg:!mt-12 max-lg:!pb-12 items-start justify-start gap-4 self-stretch pl-2 pr-2"
         >
           <ContactIcons />
         </section>

@@ -7,7 +7,7 @@ export const mobileHeroLetsTalkButtonClassName =
   "inline-flex cursor-pointer items-center justify-center gap-[10px] rounded-xl border-none bg-white px-4 py-3 text-center text-[16px] font-bold leading-6 text-[#212121] transition-opacity hover:opacity-90";
 
 export const desktopLetsTalkButtonClassName =
-  "flex h-[47px] cursor-pointer items-center justify-center rounded-xl border-none bg-white px-4 text-lg font-bold leading-normal text-[#212121] transition-opacity hover:opacity-90";
+  "flex cursor-pointer items-center justify-center gap-[10px] rounded-xl border-none bg-white px-6 py-4 text-center text-[18px] font-bold leading-6 text-[#212121] transition-opacity hover:opacity-90";
 
 type LetsTalkLinkProps = {
   className?: string;

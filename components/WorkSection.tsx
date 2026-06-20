@@ -1,4 +1,4 @@
-import { CaseStudyCard } from "@/components/CaseStudyCard";
+import Link from "next/link";
 import { LetsTalkLink } from "@/components/LetsTalkLink";
 import type { CaseStudy } from "@/data/cases";
 
@@ -13,28 +13,93 @@ export function WorkSection({ cases, onLetsTalkClick }: WorkSectionProps) {
       id="projects"
       className="scroll-mt-24 max-lg:!m-0 max-lg:bg-background max-lg:!p-0 max-lg:!py-0 bg-background lg:w-full lg:self-stretch"
     >
-      <h2 className="max-lg:!mb-0 max-lg:!mt-12 px-2 text-[47px] font-medium leading-normal text-white lg:hidden">
-        Projects
-      </h2>
+      {/* Mobile layout */}
+      <div className="lg:hidden">
+        <h2 className="max-lg:!mb-0 max-lg:!mt-12 px-2 text-[47px] font-medium leading-normal text-white">
+          Projects
+        </h2>
 
-      <h2 className="mb-[72px] hidden text-[47px] font-medium leading-normal text-white lg:block">
-        Projects
-      </h2>
+        <div className="flex max-lg:!mb-0 max-lg:!mt-6 flex-col gap-12">
+          {cases.map((caseStudy) => (
+            <Link
+              key={caseStudy.slug}
+              href={`/work/${caseStudy.slug}`}
+              className="block"
+            >
+              <div className="px-2">
+                {caseStudy.mobileVideo ? (
+                  <video
+                    src={caseStudy.mobileVideo}
+                    className="h-auto w-full rounded-none object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                ) : (
+                  <img
+                    src={caseStudy.image}
+                    alt=""
+                    className="h-auto w-full rounded-none object-cover"
+                    aria-hidden
+                  />
+                )}
+              </div>
+              <div className="flex items-end gap-2 px-2 pb-0 pt-2">
+                <span className="min-w-0 flex-1 whitespace-pre-line text-left text-[16px] font-normal leading-5 text-white">
+                  {caseStudy.mobileTitle}
+                </span>
+                <span className="max-w-[45%] shrink-0 break-words whitespace-normal text-right text-[14px] font-normal leading-5 text-white/60">
+                  {caseStudy.category}
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
 
-      <div className="flex max-lg:!mb-0 max-lg:!mt-6 max-lg:flex-col max-lg:!gap-12 lg:hidden">
-        {cases.map((caseStudy) => (
-          <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
-        ))}
+        <div className="flex max-lg:!mb-0 max-lg:!mt-12 justify-center">
+          <LetsTalkLink onClick={onLetsTalkClick} />
+        </div>
       </div>
 
-      <div className="hidden flex-row items-start gap-[72px] lg:flex">
-        {cases.map((caseStudy) => (
-          <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} variant="desktop" />
-        ))}
-      </div>
+      {/* Desktop layout: sticky left text + scrollable right projects */}
+      <div className="hidden lg:flex lg:items-start lg:gap-6">
+        {/* Left sticky panel */}
+        <div className="sticky top-0 w-[636px] shrink-0 self-start pt-0">
+          <h2 className="text-[64px] font-medium leading-normal text-white">
+            Projects
+          </h2>
+          <p className="mt-4 text-[24px] font-normal leading-normal text-white/60">
+            A selection of recent projects from my time — from zero-to-one product launches to design process transformation across a 30+ person team
+          </p>
+        </div>
 
-      <div className="flex max-lg:!mb-0 max-lg:!mt-12 justify-center lg:hidden">
-        <LetsTalkLink onClick={onLetsTalkClick} />
+        {/* Right scrollable projects */}
+        <div className="flex w-[636px] shrink-0 flex-col">
+          {cases.map((caseStudy, index) => (
+            <div key={caseStudy.slug} className={index > 0 ? "mt-[72px]" : ""}>
+              <Link
+                href={`/work/${caseStudy.slug}`}
+                className="block cursor-pointer transition-opacity hover:opacity-80"
+              >
+                <img
+                  src={caseStudy.desktopImage}
+                  alt=""
+                  className="h-auto w-full rounded-none object-cover"
+                  aria-hidden
+                />
+                <div className="mt-2 flex items-end justify-between">
+                  <span className="max-w-[60%] whitespace-normal break-words text-[24px] font-normal leading-normal text-white">
+                    {caseStudy.title}
+                  </span>
+                  <span className="self-end whitespace-nowrap text-[24px] font-normal leading-normal text-white/60">
+                    {caseStudy.category}
+                  </span>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

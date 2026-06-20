@@ -86,7 +86,7 @@ LIVE
     tags: ["Design Ops", "Systems", "Leadership"],
     stats: [
       { value: "30", label: "designers" },
-      { value: "24", label: "teams\nadopted\nthe process" },
+      { value: "24 teams", label: "adopted\nthe process" },
       { value: "25", label: "stages of the\ndesign workflow" },
     ],
     content: `Role: Designer (mid-level), primary contributor. Team: 1 additional designer, guided by Lead Designer. Scope: ~30 designers, 24 product teams, CPO, PMs, POs. Status: Adopted across all teams, in use 6+ months.

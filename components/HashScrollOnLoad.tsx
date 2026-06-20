@@ -14,9 +14,17 @@ function resolveHash(rawHash: string) {
 
 export function HashScrollOnLoad() {
   useEffect(() => {
+    // Prevent browser from restoring scroll position on reload
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
     const scrollToHash = () => {
       const rawHash = window.location.hash.replace("#", "");
-      if (!rawHash) return;
+      if (!rawHash) {
+        window.scrollTo(0, 0);
+        return;
+      }
 
       const target = resolveHash(rawHash);
       const id = target.replace("#", "");
