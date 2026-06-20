@@ -24,7 +24,7 @@ export const cases: CaseStudy[] = [
     mobileTitle: "Precious metals\nstorefront",
     slug: "metals",
     image: "/Pic.jpg",
-    desktopImage: "/D_Pic.jpg",
+    desktopImage: "/D_PicNew-2.jpg",
     category: "Fintech & E-Commerce",
     description:
       "Designing a new digital sales channel for precious metals from zero",
@@ -137,7 +137,7 @@ Active for 6+ months with no major revisions needed.`,
     mobileTitle: "Product basket\nform",
     slug: "basket",
     image: "/Pic-2.jpg",
-    desktopImage: "/D_Pic-2.jpg",
+    desktopImage: "/D_PicNew-3.jpg",
     mobileVideo: "/Video3.mov",
     category: "Fintech & Research",
     description:

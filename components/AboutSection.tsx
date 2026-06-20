@@ -60,6 +60,20 @@ function ContactIcons() {
           className="h-11 w-11 object-contain"
         />
       </a>
+      <a
+        href="https://www.behance.net/Golub54"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transition-opacity hover:opacity-80"
+      >
+        <img
+          src="/Behance.png"
+          width={44}
+          height={44}
+          alt="Behance"
+          className="h-11 w-11 object-contain"
+        />
+      </a>
     </>
   );
 }

@@ -80,12 +80,12 @@ export function WorkSection({ cases, onLetsTalkClick }: WorkSectionProps) {
             <div key={caseStudy.slug} className={index > 0 ? "mt-[72px]" : ""}>
               <Link
                 href={`/work/${caseStudy.slug}`}
-                className="block cursor-pointer transition-opacity hover:opacity-80"
+                className="block cursor-pointer transition-transform duration-300 hover:scale-105"
               >
                 <img
                   src={caseStudy.desktopImage}
                   alt=""
-                  className="h-auto w-full rounded-none object-cover"
+                  className="h-auto w-full rounded-[12px] object-cover"
                   aria-hidden
                 />
                 <div className="mt-2 flex items-end justify-between gap-2">
