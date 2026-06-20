@@ -43,12 +43,23 @@ export function CaseStudyCard({
       className={`group block max-lg:!m-0 max-lg:px-0 ${className}`}
     >
       <div className="px-2">
-        <img
-          src={caseStudy.image}
-          alt=""
-          className="h-auto w-full rounded-none object-cover"
-          aria-hidden
-        />
+        {caseStudy.mobileVideo ? (
+          <video
+            src={caseStudy.mobileVideo}
+            className="h-auto w-full rounded-none object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        ) : (
+          <img
+            src={caseStudy.image}
+            alt=""
+            className="h-auto w-full rounded-none object-cover"
+            aria-hidden
+          />
+        )}
       </div>
       <div className="flex items-end gap-2 px-2 pb-0 pt-2">
         <span className="min-w-0 flex-1 whitespace-pre-line text-left text-[16px] font-normal leading-5 text-white">

@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { site } from "@/data/site";
 
-const mobileAboutText =
-  "I grew up in Saint Petersburg and trained as a ballet dancer before finding my way into product design. Turns out choreography and UX have more in common than you'd think — both are about guiding people through an experience without them noticing the work behind it. 5+ years in IT, the last 3 at Alfa-Bank as a Senior Product Designer. I work on products used by millions and on the processes that make design teams function. Now based in Barcelona, looking for the next stage.";
+const aboutText =
+  "I grew up in Saint Petersburg and trained as a ballet dancer before finding my way into product design. Turns out choreography and UX have more in common than you'd think — both are about guiding people through an experience without them noticing the work behind it\n\n5+ years in IT, the last 3 at Alfa-Bank as a Senior Product Designer on the business product team — also leading the design system's widget library (quality, Figma library, dev handoff), with 220 widgets and components shipped to Storybook last year alongside engineering\n\nNow based in Barcelona, looking for the next stage";
 
 function ContactIcons() {
   const [copied, setCopied] = useState(false);
@@ -25,7 +25,7 @@ function ContactIcons() {
         aria-label="Copy email address"
       >
         <img
-          src={copied ? "/icons/Icon.Success.png" : "/icons/Frame 2131327003.png"}
+          src={copied ? "/Icon. Success.png" : "/Mail.png"}
           width={44}
           height={44}
           alt="Email"
@@ -39,7 +39,7 @@ function ContactIcons() {
         className="transition-opacity hover:opacity-80"
       >
         <img
-          src="/icons/Frame 2131327006.png"
+          src="/Telegram.png"
           width={44}
           height={44}
           alt="Telegram"
@@ -53,7 +53,7 @@ function ContactIcons() {
         className="transition-opacity hover:opacity-80"
       >
         <img
-          src="/icons/Frame 2131327005.png"
+          src="/In.png"
           width={44}
           height={44}
           alt="LinkedIn"
@@ -72,18 +72,20 @@ export function AboutSection() {
     >
       {/* Mobile About + Contact */}
       <div className="lg:hidden">
-        <div className="flex max-lg:!m-0 max-lg:!mt-12 flex-col items-start gap-8 self-stretch px-2">
-          <h2 className="w-full text-left text-[47px] font-medium leading-normal text-white">
-            About
+        <div className="flex max-lg:!m-0 max-lg:!mt-12 flex-col items-center gap-8 self-stretch px-2">
+          <h2 className="w-full text-center text-[47px] font-medium leading-normal text-white">
+            About me
           </h2>
-          <p className="text-[18px] font-normal leading-6 text-white/60">
-            {mobileAboutText}
-          </p>
+          {aboutText.split("\n\n").map((para, i) => (
+            <p key={i} className="text-center text-[18px] font-normal leading-6 text-white/60">
+              {para}
+            </p>
+          ))}
         </div>
 
         <section
           id="contact"
-          className="scroll-mt-24 flex max-lg:!mb-0 max-lg:!mt-12 max-lg:!pb-12 items-start justify-start gap-4 self-stretch pl-2 pr-2"
+          className="scroll-mt-24 flex max-lg:!mb-0 max-lg:!mt-12 max-lg:!pb-12 items-start justify-center gap-4 self-stretch px-2"
         >
           <ContactIcons />
         </section>
@@ -92,12 +94,16 @@ export function AboutSection() {
       {/* Desktop About + Contact */}
       <div className="hidden lg:block">
         <h2 className="mb-[72px] text-[47px] font-medium leading-normal text-white">
-          About
+          About me
         </h2>
 
-        <p className="text-lg font-normal leading-6 text-white/60">
-          I grew up in Saint Petersburg and trained as a ballet dancer before finding my way into product design. Turns out choreography and UX have more in common than you&apos;d think — both are about guiding people through an experience without them noticing the work behind it. 5+ years in IT, the last 3 at Alfa-Bank as a Senior Product Designer. I work on products used by millions and on the processes that make design teams function. Now based in Barcelona, looking for the next stage.
-        </p>
+        <div className="space-y-6">
+          {aboutText.split("\n\n").map((para, i) => (
+            <p key={i} className="text-lg font-normal leading-6 text-white/60">
+              {para}
+            </p>
+          ))}
+        </div>
 
         <section
           id="contact"

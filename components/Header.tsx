@@ -9,7 +9,7 @@ import { site } from "@/data/site";
 
 const desktopNav = [
   { href: "/#projects", label: "Work" },
-  { href: "/#about", label: "About" },
+  { href: "/#about", label: "About me" },
 ];
 
 export function Header() {

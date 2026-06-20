@@ -10,6 +10,7 @@ export type CaseStudy = {
   slug: string;
   image: string;
   desktopImage: string;
+  mobileVideo?: string;
   category: string;
   description: string;
   tags: string[];
@@ -19,8 +20,8 @@ export type CaseStudy = {
 
 export const cases: CaseStudy[] = [
   {
-    title: "Precious Metals Storefront",
-    mobileTitle: "Precious Metals\nStorefront",
+    title: "Precious metals storefront",
+    mobileTitle: "Precious metals\nstorefront",
     slug: "metals",
     image: "/Pic.jpg",
     desktopImage: "/D_Pic.jpg",
@@ -60,7 +61,13 @@ SOLUTION
 The storefront consists of three connected surfaces. Category landing page introduces precious metals as an investment product and routes users to bars or coins. Product catalog supports filtering, sorting, search, and pagination across 38+ SKUs with automatic price updates via Central Bank integration. Cart + lead form flow lets users add products with quantity controls, review in a modal overlay, then submit a structured request with name, phone, and preferred city.
 
 IMPACT
-Launched 2 fully functional storefronts from zero in 2 months. Created a new digital sales channel: structured lead → telemarketing call → branch purchase. Telemarketing efficiency improved: agents receive specific product lists instead of vague verbal requests. Target: +10% conversion from catalog sessions to submitted requests.
+Launched 2 fully functional storefronts from zero in 2 months.
+
+Created a new digital sales channel: structured lead → telemarketing call → branch purchase.
+
+Telemarketing efficiency improved: agents receive specific product lists instead of vague verbal requests.
+
++10% conversion from catalog sessions to submitted requests
 
 LIVE
 - Precious Metals Hub: https://alfabank.ru/make-money/metall/
@@ -68,8 +75,8 @@ LIVE
 - Bars Storefront: https://alfabank.ru/make-money/metall/bars/`,
   },
   {
-    title: "Unified Design Process",
-    mobileTitle: "Unified Design\nProcess",
+    title: "Unified design process",
+    mobileTitle: "Unified design\nprocess",
     slug: "design-process",
     image: "/Pic-1.jpg",
     desktopImage: "/D_Pic-1.jpg",
@@ -78,14 +85,14 @@ LIVE
       "Building a design process framework for a team of 30+ designers",
     tags: ["Design Ops", "Systems", "Leadership"],
     stats: [
-      { value: "30+", label: "designers" },
-      { value: "15", label: "teams" },
-      { value: "6+", label: "months" },
+      { value: "30", label: "designers" },
+      { value: "24", label: "teams\nadopted\nthe process" },
+      { value: "25", label: "stages of the\ndesign workflow" },
     ],
-    content: `Role: Designer (mid-level), primary contributor. Team: 1 additional designer, guided by Lead Designer. Scope: ~30 designers, 15 product teams, CPO, PMs, POs. Status: Adopted across all teams, in use 6+ months.
+    content: `Role: Designer (mid-level), primary contributor. Team: 1 additional designer, guided by Lead Designer. Scope: ~30 designers, 24 product teams, CPO, PMs, POs. Status: Adopted across all teams, in use 6+ months.
 
 CONTEXT
-The Alfa-Bank website design team had grown to around 30 designers across 15 product teams. Processes hadn't scaled with the headcount — every team operated differently, workflows were undocumented, and there was no shared language between designers, product owners, and project managers.
+The Alfa-Bank website design team had grown to around 30 designers across 24 product teams. Processes hadn't scaled with the headcount — every team operated differently, workflows were undocumented, and there was no shared language between designers, product owners, and project managers.
 
 PROBLEMS IDENTIFIED
 No regular planning → constant inefficiency and chaotic work rhythm. Poor quality briefs → wasted time, missed deadlines, rework. Urgent unplanned tasks and shifting priorities → loss of focus, low output quality. Friction with marketing → missed goals, coordination overhead.
@@ -93,7 +100,7 @@ No regular planning → constant inefficiency and chaotic work rhythm. Poor qual
 MY PROCESS
 Research — studied existing process documentation from other divisions within Alfa-Bank, and analyzed how other companies structure design workflows.
 
-Discovery — conducted individual interviews with designers and product owners across all 15 teams. Mapped current workflows, identified pain points, documented everything in Notion.
+Discovery — conducted individual interviews with designers and product owners across all 24 teams. Mapped current workflows, identified pain points, documented everything in Notion.
 
 Framework design — synthesized findings into a unified process framework in Figma. The core challenge: cover all stages clearly enough for non-designers while remaining practical for designers who live in it daily.
 
@@ -106,7 +113,7 @@ Task type definition table — a reference document helping anyone (designers, P
 
 High-level process tables — two versions covering standard and non-standard task types, giving teams a clear top-level view of how design work moves from brief to delivery.
 
-Detailed stage-by-stage table — a comprehensive map of ~20 stages in a task's lifecycle, showing exactly where and how the designer participates at each step — directly, indirectly, or as a reviewer.
+Detailed stage-by-stage table — a comprehensive map of 25 stages in a task's lifecycle, showing exactly where and how the designer participates at each step — directly, indirectly, or as a reviewer.
 
 Jira task templates — structured brief templates for every task type used on the website. Templates are synced with Jira as auto-populated stubs, so requestors fill in context before the task reaches a designer. No more empty briefs.
 
@@ -115,25 +122,32 @@ Useful links library — a curated reference hub with everything designers and c
 Marketing-specific process diagram — a dedicated flow diagram created to align with the marketing team on design stages, addressing the specific chaos marketing requests introduced into the workflow.
 
 OUTCOME
-Framework adopted across all 15 product teams. Used as primary onboarding material for new designers. Reduced unplanned task interruptions. Active for 6+ months with no major revisions needed.`,
+Framework adopted across all 24 product teams, 30 designers.
+
+25 stages of the design workflow were mapped and standardized, from kickoff to release
+
+Used as primary onboarding material for new designers.
+
+Reduced unplanned task interruptions.
+
+Active for 6+ months with no major revisions needed.`,
   },
   {
-    title: "Product Basket Form",
-    mobileTitle: "Product Basket\nForm",
+    title: "Product basket form",
+    mobileTitle: "Product basket\nform",
     slug: "basket",
     image: "/Pic-2.jpg",
     desktopImage: "/D_Pic-2.jpg",
+    mobileVideo: "/Video3.mov",
     category: "Fintech & Research",
     description:
       "Iterative redesign of a debit card application flow with cross-sell basket",
     tags: ["Product Design", "Fintech", "Research"],
     stats: [
-      { value: "19.4%", label: "CR1 (plan was 15%) ✓" },
-      { value: "81%", label: "CR2 (plan was 79%) ✓" },
-      { value: "10%", label: "Users engage with basket" },
-      { value: "3 min", label: "Saved per courier meeting" },
-      { value: "648K", label: "Cashback package traffic" },
-      { value: "24,345", label: "Cashback package orders" },
+      { value: "19.4%", label: "CR1 (plan was 15%)" },
+      { value: "81%", label: "CR2 (plan was 79%)" },
+      { value: "3 min", label: "saved per\ncourier meeting" },
+      { value: "38.75%", label: "orders converted\nto activation" },
     ],
     content: `Role: Product Designer. Team: Designer, Motional Designer, Researcher, Analyst, Marketing, Editor, Frontend/Backend, QA. Timeline: September 2023 – 2025. Status: Live on production (mobile + desktop). Live: Product Basket (https://alfabank.ru/everyday/debit-cards/alfacard/)
 
@@ -141,19 +155,39 @@ CONTEXT
 When a new customer applies for an Alfa-Bank debit card online, they go through a multi-step application form. The business wanted to use this moment to introduce additional banking products. Goal: increase product penetration, generate commission income, and reduce cross-sell costs by embedding offers into the onboarding flow.
 
 WHAT THE BASKET DOES
-Step 1: customer sees their core order and can add optional products managed via admin panel. Step 2: personalized offers pulled dynamically from backend based on customer profile, delivery type, and city. Step 3: customer reviews full order and awaits delivery. Physical products handed over at delivery. Non-physical products set up by bank employee during in-person meeting — reducing that meeting time by an average of 3 minutes.
+Step 1: customer sees their core order and can add optional products managed via admin panel.
+
+[IMAGE:1step.jpg]
+
+Step 2: personalized offers pulled dynamically from backend based on customer profile, delivery type, and city.
+
+Step 3: customer reviews full order and awaits delivery.
+
+[IMAGE:finalstep.jpg]
+
+Physical products handed over at delivery. Non-physical products set up by bank employee during in-person meeting — reducing that meeting time by an average of 3 minutes.
 
 HOW IT EVOLVED
-September 2023 — business arrived with an enormous wishlist. We made an early mistake: jumped into concept development before aligning on scope or timeline. Lesson: never start designing without a confirmed scope, a realistic timeline, and a proper brief.
+September 2023 — business arrived with an enormous wishlist. We made an early mistake: jumped into concept development before aligning on scope or timeline.
+Lesson: never start designing without a confirmed scope, a realistic timeline, and a proper brief.
 
 November 2023 — scoped-down MVP: cashback package selection. Shipped. Impact on conversion: negligible.
 
 Early 2024 — added cashback category selector. Shipped. Still no meaningful metric movement.
 
-Mid 2024 — team expanded with marketing, researchers, motional designer. Two design directions tested with 5 respondents each. Result: users on both variants skipped the card design and cashback selection entirely, jumping straight to form submission.
+Mid 2024 — team expanded with marketing, researchers, motional designer. 2 design directions tested with 5 respondents each. Result: users on both variants skipped the card design and cashback selection entirely, jumping straight to form submission.
+
+[HEADING:1st design for test]
+
+[IMAGE:testdesign1.jpg]
+
+[HEADING:2nd design for test]
+
+[IMAGE:testdesign2.jpg]
+
+[SPACER]
 
 July 2024 — full basket scope with 12+ products. Each required defining: launch quarter, application step, admin vs backend configuration, eligibility, delivery type support, and courier actions. Full requirements mapping followed.
-
 Usability test (10 respondents): unclear why users should choose a cashback package, users couldn't recall selected products, confetti on success screen obscured important text. We categorized every finding by owner — product design, business, marketing — and resolved each before launch.
 
 Autumn 2024 — A/B test on 43% of mobile traffic. Results: no drop in conversion, 1 in 10 customers interacted with the basket, courier meeting time decreased by ~3 minutes.
@@ -161,7 +195,15 @@ Autumn 2024 — A/B test on 43% of mobile traffic. Results: no drop in conversio
 January 2025 — built full-scope target version, ran another usability test, addressed remaining issues, shipped. Desktop version designed and launched shortly after.
 
 OUTCOME
-Basket live on production across mobile and desktop. No conversion loss during rollout. 10% of users actively engage with basket. ~3 minutes saved per courier/branch meeting. 3 usability tests across 2 years shaped a significantly more usable final product.
+Basket live on production across mobile and desktop. No conversion loss during rollout.
+
+10% of users actively engage with basket.
+
+38.75% of orders converted to activation — across 10 products and 47,800+ orders.
+
+~3 minutes saved per courier meeting.
+
+3 usability tests across 2 years shaped a significantly more usable final product.
 
 LIVE
 - Product Basket (Alfa-Card application): https://alfabank.ru/everyday/debit-cards/alfacard/`,

@@ -5,7 +5,7 @@ import { letsTalkButtonClassName } from "@/components/LetsTalkLink";
 
 const mobileNav = [
   { href: "#projects", label: "Projects" },
-  { href: "#about", label: "About" },
+  { href: "#about", label: "About me" },
 ];
 
 type MobileHeroNavProps = {
