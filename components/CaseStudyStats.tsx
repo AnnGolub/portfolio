@@ -10,7 +10,7 @@ export function CaseStudyStats({ stats }: CaseStudyStatsProps) {
   return (
     <section
       aria-label="Key metrics"
-      className="mt-12 flex w-full flex-col gap-6 rounded-none bg-[#212121] p-4"
+      className="mt-12 flex w-full flex-col gap-6 rounded-[16px] bg-[#212121] p-4"
     >
       {stats.map((stat) => (
         <div

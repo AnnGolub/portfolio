@@ -17,7 +17,7 @@ function renderParagraph(paragraph: string, index: number) {
     const filename = paragraph.slice(7, -1);
     return (
       <div key={index} className="mt-6">
-        <img src={`/${filename}`} alt="" className="w-full rounded-none" />
+        <img src={`/${filename}`} alt="" className="w-full rounded-[16px]" />
       </div>
     );
   }
@@ -26,7 +26,7 @@ function renderParagraph(paragraph: string, index: number) {
     const filename = paragraph.slice(7, -1);
     return (
       <div key={index} className="mt-6">
-        <video src={`/${filename}`} className="w-full rounded-none" autoPlay muted loop playsInline />
+        <video src={`/${filename}`} className="w-full rounded-[16px]" autoPlay muted loop playsInline />
       </div>
     );
   }
@@ -47,7 +47,7 @@ function renderParagraph(paragraph: string, index: number) {
   if (paragraph.startsWith("* ")) {
     return (
       <div key={index} className="flex gap-3">
-        <span className="mt-[2px] shrink-0 text-[18px] font-normal leading-6 text-white/60">*</span>
+        <span className="mt-[2px] shrink-0 text-[18px] font-normal leading-6 text-white/60">•</span>
         <p className="text-[18px] font-normal leading-6 text-white/60">{paragraph.slice(2)}</p>
       </div>
     );
@@ -79,40 +79,46 @@ export function TabbedCaseStudyContent({ content }: Props) {
     <>
       {/* Mobile: tabs */}
       <div className="lg:hidden">
-        {/* Tab bar */}
-        <div className="mt-12 overflow-x-auto">
-          <div className="flex items-start gap-4 px-2" style={{ width: "max-content" }}>
-            {contentSections.map((section, i) => {
-              const active = i === activeIdx;
-              return (
-                <button
-                  key={section.title}
-                  type="button"
-                  onClick={() => setActiveIdx(i)}
-                  className="flex flex-col items-start gap-[10px]"
-                >
-                  <span
-                    className={`whitespace-nowrap text-[16px] font-normal leading-6 ${
-                      active ? "text-white" : "text-white/60"
-                    }`}
+        {/* Tab bar — breaks out of px-2 page padding to go edge-to-edge */}
+        <div className="mt-12 -mx-2">
+          <div
+            className="overflow-x-auto px-2"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            <style>{`.tab-scroll::-webkit-scrollbar { display: none; }`}</style>
+            <div className="tab-scroll flex items-start gap-4" style={{ width: "max-content" }}>
+              {contentSections.map((section, i) => {
+                const active = i === activeIdx;
+                return (
+                  <button
+                    key={section.title}
+                    type="button"
+                    onClick={() => setActiveIdx(i)}
+                    className="flex flex-col items-start gap-[10px]"
                   >
-                    {toSentenceCase(section.title)}
-                  </span>
-                  <div
-                    className={`h-[2px] w-full rounded-t-[1px] ${
-                      active ? "bg-white" : "bg-transparent"
-                    }`}
-                  />
-                </button>
-              );
-            })}
+                    <span
+                      className={`whitespace-nowrap text-[16px] font-normal leading-6 ${
+                        active ? "text-white" : "text-white/60"
+                      }`}
+                    >
+                      {toSentenceCase(section.title)}
+                    </span>
+                    <div
+                      className={`h-[2px] w-full rounded-t-[1px] ${
+                        active ? "bg-white" : "bg-transparent"
+                      }`}
+                    />
+                  </button>
+                );
+              })}
+            </div>
           </div>
-          {/* bottom border line */}
-          <div className="h-px bg-white opacity-10" />
+          {/* Divider — full width, edge to edge */}
+          <div className="h-px bg-white" style={{ opacity: 0.1 }} />
         </div>
 
         {/* Active tab content */}
-        <div className="mt-12 px-2">
+        <div className="mt-12">
           <SectionContent section={contentSections[activeIdx]} />
         </div>
       </div>

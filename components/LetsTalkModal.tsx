@@ -56,6 +56,13 @@ export default function LetsTalkModal({ isOpen, onClose }: LetsTalkModalProps) {
           <img src="/icons/Close.svg" width={16} height={16} alt="" />
         </button>
 
+        <h2
+          id="lets-talk-modal-title-mobile"
+          className="mb-4 text-base font-bold leading-6 text-white"
+        >
+          Let&apos;s talk
+        </h2>
+
         <div className="flex flex-col gap-3">
           {/* Email */}
           <button
@@ -64,7 +71,7 @@ export default function LetsTalkModal({ isOpen, onClose }: LetsTalkModalProps) {
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
             <img
-              src={emailCopied ? "/Success.svg" : "/Mail.png"}
+              src={emailCopied ? "/Success.svg" : "/icons/sms.svg"}
               alt=""
               width={20}
               height={20}
@@ -85,7 +92,7 @@ export default function LetsTalkModal({ isOpen, onClose }: LetsTalkModalProps) {
             rel="noopener noreferrer"
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
-            <img src="/Telegram.png" alt="" width={20} height={20} className="h-5 w-5 shrink-0 object-contain" />
+            <img src="/icons/sms-1.svg" alt="" width={20} height={20} className="h-5 w-5 shrink-0 object-contain" />
             <span className="flex flex-1 flex-col items-start gap-1">
               <span className="text-[14px] font-normal leading-[18px] text-[#525252]">telegram</span>
               <span className="text-[14px] font-normal leading-6 text-white">golub54</span>
@@ -101,7 +108,7 @@ export default function LetsTalkModal({ isOpen, onClose }: LetsTalkModalProps) {
             rel="noopener noreferrer"
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
-            <img src="/In.png" alt="" width={20} height={20} className="h-5 w-5 shrink-0 object-contain" />
+            <img src="/icons/sms-2.svg" alt="" width={20} height={20} className="h-5 w-5 shrink-0 object-contain" />
             <span className="flex flex-1 flex-col items-start gap-1">
               <span className="text-[14px] font-normal leading-[18px] text-[#525252]">linkedin</span>
               <span className="text-[14px] font-normal leading-6 text-white">Anna Golubeva</span>

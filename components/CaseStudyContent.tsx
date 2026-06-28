@@ -54,7 +54,7 @@ function renderParagraph(paragraph: string, index: number) {
   if (paragraph.startsWith("* ")) {
     return (
       <div key={index} className="flex gap-3">
-        <span className="mt-[2px] shrink-0 text-[18px] font-normal leading-6 text-white/60">*</span>
+        <span className="mt-[2px] shrink-0 text-[18px] font-normal leading-6 text-white/60">•</span>
         <p className="text-[18px] font-normal leading-6 text-white/60">{paragraph.slice(2)}</p>
       </div>
     );

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CaseStudyTopBar } from "@/components/CaseStudyTopBar";
-import { CaseStudyContent } from "@/components/CaseStudyContent";
 import { TabbedCaseStudyContent } from "@/components/TabbedCaseStudyContent";
 import { CaseStudyLinks } from "@/components/CaseStudyLinks";
 import { CaseStudyStats } from "@/components/CaseStudyStats";
@@ -66,11 +65,7 @@ export default function CaseStudyPage({ params }: PageProps) {
 
       <CaseStudyStats stats={displayStats} />
 
-      {caseStudy.slug === "basket" ? (
-        <TabbedCaseStudyContent content={caseStudy.content} />
-      ) : (
-        <CaseStudyContent content={caseStudy.content} />
-      )}
+      <TabbedCaseStudyContent content={caseStudy.content} />
     </PageShell>
   );
 }
