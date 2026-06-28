@@ -48,18 +48,6 @@ Without a digital storefront, all precious metals sales depended entirely on bra
 CONSTRAINTS
 The project launched under real pressure: a new Product Owner joined in July, the team inherited the project in August, and the goal was to ship to production within the same quarter. The decision was made to launch an MVP first — built on existing design system components, without custom dev work or user testing cycles.
 
-MY PROCESS
-Discovery — researched Storybook component library, analyzed competitor storefronts, collected references, discussed technical constraints with frontend developers and the website design team.
-
-Information architecture & UX — mapped the user journey and information architecture. Defined the core flow: landing page → product catalog → cart → lead form → success state. The key design challenge: making a cart-to-lead-form flow feel complete and trustworthy without an actual checkout.
-
-Hypothesis-driven design — framed the cart feature around a clear product hypothesis: users who can build a structured order before submitting a request will convert at a higher rate and generate higher-quality leads. Defined success metrics upfront: conversion from catalog sessions to submitted requests, average number of items per order, share of multi-item submissions.
-
-Delivery — produced full annotated mockups, presented to stakeholders, ran design reviews, led grooming sessions, wrote specs for implementation, reviewed the built solution before launch.
-
-SOLUTION
-The storefront consists of three connected surfaces. Category landing page introduces precious metals as an investment product and routes users to bars or coins. Product catalog supports filtering, sorting, search, and pagination across 38+ SKUs with automatic price updates via Central Bank integration. Cart + lead form flow lets users add products with quantity controls, review in a modal overlay, then submit a structured request with name, phone, and preferred city.
-
 WHAT IT DOES
 Step 1: customer browses the coin catalog with filtering and sorting options. They can open a product card to explore full details — metal type, weight, mintage, price — and add items to the cart from the card or directly from the catalog. Quantity is adjustable at both points
 
@@ -71,6 +59,18 @@ Physical coins are handed over in person at a branch or via delivery, coordinate
 [SPACER]
 
 [VIDEO:MetalsVideo.mov]
+
+MY PROCESS
+Discovery — researched Storybook component library, analyzed competitor storefronts, collected references, discussed technical constraints with frontend developers and the website design team.
+
+Information architecture & UX — mapped the user journey and information architecture. Defined the core flow: landing page → product catalog → cart → lead form → success state. The key design challenge: making a cart-to-lead-form flow feel complete and trustworthy without an actual checkout.
+
+Hypothesis-driven design — framed the cart feature around a clear product hypothesis: users who can build a structured order before submitting a request will convert at a higher rate and generate higher-quality leads. Defined success metrics upfront: conversion from catalog sessions to submitted requests, average number of items per order, share of multi-item submissions.
+
+Delivery — produced full annotated mockups, presented to stakeholders, ran design reviews, led grooming sessions, wrote specs for implementation, reviewed the built solution before launch.
+
+SOLUTION
+The storefront consists of three connected surfaces. Category landing page introduces precious metals as an investment product and routes users to bars or coins. Product catalog supports filtering, sorting, search, and pagination across 38+ SKUs with automatic price updates via Central Bank integration. Cart + lead form flow lets users add products with quantity controls, review in a modal overlay, then submit a structured request with name, phone, and preferred city.
 
 IMPACT
 Launched 2 fully functional storefronts from zero in 2 months.
