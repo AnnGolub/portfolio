@@ -60,8 +60,6 @@ Step 2: a sticky cart button gives constant access from anywhere in the flow. In
 Step 3: customer fills in contact details — name, phone, city — and submits an application. A bank manager calls back to confirm and arrange the purchase.
 Physical coins are handed over in person at a branch or via delivery, coordinated by the manager after the application is received
 
-[SPACER]
-
 [VIDEO:MetalsVideo.mov]
 
 MY PROCESS

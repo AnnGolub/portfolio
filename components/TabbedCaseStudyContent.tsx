@@ -12,7 +12,36 @@ function toSentenceCase(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
-function renderParagraph(paragraph: string, index: number, opts: { hideVideos?: boolean; desktop?: boolean } = {}) {
+function VideoWithLoader({ src, fullBleed }: { src: string; fullBleed?: boolean }) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className={`relative${fullBleed ? " -mx-2 lg:mx-0" : ""}`}>
+      {/* Placeholder shown while loading */}
+      {!loaded && (
+        <div
+          className="absolute inset-0 animate-pulse rounded-none bg-[#1a1a1a]"
+          style={{ minHeight: 320 }}
+        />
+      )}
+      <video
+        src={src}
+        className={`w-full transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
+        autoPlay
+        muted
+        loop
+        playsInline
+        onCanPlay={() => setLoaded(true)}
+      />
+    </div>
+  );
+}
+
+function renderParagraph(
+  paragraph: string,
+  index: number,
+  opts: { hideVideos?: boolean; desktop?: boolean } = {}
+) {
   if (paragraph.startsWith("[IMAGE:") && paragraph.endsWith("]")) {
     const filename = paragraph.slice(7, -1);
     return (
@@ -26,8 +55,9 @@ function renderParagraph(paragraph: string, index: number, opts: { hideVideos?: 
     if (opts.hideVideos) return null;
     const filename = paragraph.slice(7, -1);
     return (
-      <div key={index} className="mt-6 -mx-2 lg:mx-0">
-        <video src={`/${filename}`} className="w-full" autoPlay muted loop playsInline />
+      // Use inline style marginTop to override space-y-4 and get exact 48px
+      <div key={index} style={{ marginTop: 48 }}>
+        <VideoWithLoader src={`/${filename}`} fullBleed />
       </div>
     );
   }
@@ -68,7 +98,15 @@ function renderParagraph(paragraph: string, index: number, opts: { hideVideos?: 
   );
 }
 
-function SectionContent({ section, hideVideos, desktop }: { section: CaseSection; hideVideos?: boolean; desktop?: boolean }) {
+function SectionContent({
+  section,
+  hideVideos,
+  desktop,
+}: {
+  section: CaseSection;
+  hideVideos?: boolean;
+  desktop?: boolean;
+}) {
   return (
     <div className="space-y-4">
       {splitSectionParagraphs(section.body).map((p, i) =>
@@ -95,7 +133,10 @@ export function TabbedCaseStudyContent({ content, hideDesktopVideos }: Props) {
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             <style>{`.tab-scroll::-webkit-scrollbar { display: none; }`}</style>
-            <div className="tab-scroll flex items-start gap-4" style={{ width: "max-content" }}>
+            <div
+              className="tab-scroll flex items-start gap-4"
+              style={{ width: "max-content" }}
+            >
               {contentSections.map((section, i) => {
                 const active = i === activeIdx;
                 return (
@@ -105,10 +146,18 @@ export function TabbedCaseStudyContent({ content, hideDesktopVideos }: Props) {
                     onClick={() => setActiveIdx(i)}
                     className="flex flex-col items-start gap-[10px]"
                   >
-                    <span className={`whitespace-nowrap text-[16px] font-normal leading-6 ${active ? "text-white" : "text-white/60"}`}>
+                    <span
+                      className={`whitespace-nowrap text-[16px] font-normal leading-6 ${
+                        active ? "text-white" : "text-white/60"
+                      }`}
+                    >
                       {toSentenceCase(section.title)}
                     </span>
-                    <div className={`h-[2px] w-full rounded-t-[1px] ${active ? "bg-white" : "bg-transparent"}`} />
+                    <div
+                      className={`h-[2px] w-full rounded-t-[1px] ${
+                        active ? "bg-white" : "bg-transparent"
+                      }`}
+                    />
                   </button>
                 );
               })}
