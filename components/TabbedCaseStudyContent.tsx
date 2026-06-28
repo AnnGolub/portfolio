@@ -25,8 +25,8 @@ function renderParagraph(paragraph: string, index: number) {
   if (paragraph.startsWith("[VIDEO:") && paragraph.endsWith("]")) {
     const filename = paragraph.slice(7, -1);
     return (
-      <div key={index} className="mt-6">
-        <video src={`/${filename}`} className="w-full rounded-[16px]" autoPlay muted loop playsInline />
+      <div key={index} className="mt-6 -mx-2">
+        <video src={`/${filename}`} className="w-full" autoPlay muted loop playsInline />
       </div>
     );
   }

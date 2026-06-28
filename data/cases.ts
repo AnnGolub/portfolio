@@ -60,6 +60,18 @@ Delivery — produced full annotated mockups, presented to stakeholders, ran des
 SOLUTION
 The storefront consists of three connected surfaces. Category landing page introduces precious metals as an investment product and routes users to bars or coins. Product catalog supports filtering, sorting, search, and pagination across 38+ SKUs with automatic price updates via Central Bank integration. Cart + lead form flow lets users add products with quantity controls, review in a modal overlay, then submit a structured request with name, phone, and preferred city.
 
+WHAT IT DOES
+Step 1: customer browses the coin catalog with filtering and sorting options. They can open a product card to explore full details — metal type, weight, mintage, price — and add items to the cart from the card or directly from the catalog. Quantity is adjustable at both points
+
+Step 2: a sticky cart button gives constant access from anywhere in the flow. Inside the cart, customers review their selection, adjust quantities, or remove items. Deleted products are held on screen for 5 seconds with an undo option — recovering from accidental taps
+
+Step 3: customer fills in contact details — name, phone, city — and submits an application. A bank manager calls back to confirm and arrange the purchase.
+Physical coins are handed over in person at a branch or via delivery, coordinated by the manager after the application is received
+
+[SPACER]
+
+[VIDEO:MetalsVideo.mov]
+
 IMPACT
 Launched 2 fully functional storefronts from zero in 2 months.
 
@@ -153,7 +165,7 @@ Active for 6+ months with no major revisions needed.`,
 CONTEXT
 When a new customer applies for an Alfa-Bank debit card online, they go through a multi-step application form. The business wanted to use this moment to introduce additional banking products. Goal: increase product penetration, generate commission income, and reduce cross-sell costs by embedding offers into the onboarding flow.
 
-WHAT THE BASKET DOES
+WHAT IT DOES
 Step 1: customer sees their core order and can add optional products managed via admin panel.
 
 Step 2: personalized offers pulled dynamically from backend based on customer profile, delivery type, and city.
