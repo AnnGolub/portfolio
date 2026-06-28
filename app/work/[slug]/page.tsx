@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CaseStudyTopBar } from "@/components/CaseStudyTopBar";
 import { CaseStudyContent } from "@/components/CaseStudyContent";
+import { TabbedCaseStudyContent } from "@/components/TabbedCaseStudyContent";
 import { CaseStudyLinks } from "@/components/CaseStudyLinks";
 import { CaseStudyStats } from "@/components/CaseStudyStats";
 import { PageShell } from "@/components/PageShell";
@@ -55,7 +56,7 @@ export default function CaseStudyPage({ params }: PageProps) {
         <img
           src={caseStudy.image}
           alt=""
-          className="mt-6 w-full rounded-none object-cover"
+          className="mt-6 w-full rounded-[16px] object-cover"
         />
       ) : (
         <div className="mt-6 h-60 w-full rounded-none bg-[#1a1a1a]" aria-hidden />
@@ -65,7 +66,11 @@ export default function CaseStudyPage({ params }: PageProps) {
 
       <CaseStudyStats stats={displayStats} />
 
-      <CaseStudyContent content={caseStudy.content} />
+      {caseStudy.slug === "basket" ? (
+        <TabbedCaseStudyContent content={caseStudy.content} />
+      ) : (
+        <CaseStudyContent content={caseStudy.content} />
+      )}
     </PageShell>
   );
 }

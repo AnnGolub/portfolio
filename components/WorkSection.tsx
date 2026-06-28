@@ -30,7 +30,7 @@ export function WorkSection({ cases, onLetsTalkClick }: WorkSectionProps) {
                 {caseStudy.mobileVideo ? (
                   <video
                     src={caseStudy.mobileVideo}
-                    className="h-auto w-full rounded-none object-cover"
+                    className="h-auto w-full rounded-[16px] object-cover"
                     autoPlay
                     muted
                     loop
@@ -40,7 +40,7 @@ export function WorkSection({ cases, onLetsTalkClick }: WorkSectionProps) {
                   <img
                     src={caseStudy.image}
                     alt=""
-                    className="h-auto w-full rounded-none object-cover"
+                    className="h-auto w-full rounded-[16px] object-cover"
                     aria-hidden
                   />
                 )}
@@ -85,7 +85,7 @@ export function WorkSection({ cases, onLetsTalkClick }: WorkSectionProps) {
                 <img
                   src={caseStudy.desktopImage}
                   alt=""
-                  className="h-auto w-full rounded-[12px] object-cover"
+                  className="h-auto w-full rounded-[16px] object-cover"
                   aria-hidden
                 />
                 <div className="mt-2 flex items-end justify-between gap-2">

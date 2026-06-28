@@ -136,7 +136,7 @@ Active for 6+ months with no major revisions needed.`,
     title: "Product basket form",
     mobileTitle: "Product basket\nform",
     slug: "basket",
-    image: "/Pic-2.jpg",
+    image: "/testdesign1NEW.jpg",
     desktopImage: "/D_PicNew-3.jpg",
     mobileVideo: "/Video3.mov",
     category: "Fintech & Research",
@@ -157,13 +157,9 @@ When a new customer applies for an Alfa-Bank debit card online, they go through 
 WHAT THE BASKET DOES
 Step 1: customer sees their core order and can add optional products managed via admin panel.
 
-[IMAGE:1step.jpg]
-
 Step 2: personalized offers pulled dynamically from backend based on customer profile, delivery type, and city.
 
 Step 3: customer reviews full order and awaits delivery.
-
-[IMAGE:finalstep.jpg]
 
 Physical products handed over at delivery. Non-physical products set up by bank employee during in-person meeting — reducing that meeting time by an average of 3 minutes.
 
@@ -195,15 +191,15 @@ Autumn 2024 — A/B test on 43% of mobile traffic. Results: no drop in conversio
 January 2025 — built full-scope target version, ran another usability test, addressed remaining issues, shipped. Desktop version designed and launched shortly after.
 
 OUTCOME
-Basket live on production across mobile and desktop. No conversion loss during rollout.
+* Basket live on production across mobile and desktop. No conversion loss during rollout
 
-10% of users actively engage with basket.
+* 10% of users actively engage with basket
 
-38.75% of orders converted to activation — across 10 products and 47,800+ orders.
+* 38.75% of orders converted to activation — across 10 products and 47,800+ orders
 
-~3 minutes saved per courier meeting.
+* ~3 minutes saved per courier meeting
 
-3 usability tests across 2 years shaped a significantly more usable final product.
+* 3 usability tests across 2 years shaped a significantly more usable final product
 
 LIVE
 - Product Basket (Alfa-Card application): https://alfabank.ru/everyday/debit-cards/alfacard/`,
