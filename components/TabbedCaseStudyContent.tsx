@@ -123,14 +123,16 @@ export function TabbedCaseStudyContent({ content }: Props) {
         </div>
       </div>
 
-      {/* Desktop: regular stacked layout */}
+      {/* Desktop: two-column layout */}
       <div className="hidden lg:block">
         {contentSections.map((section) => (
-          <section key={section.title} className="mt-12">
-            <h2 className="mb-6 text-left text-[32px] font-medium leading-normal text-white">
+          <section key={section.title} className="mt-12 flex items-start gap-6">
+            <h2 className="w-[420px] shrink-0 text-[47px] font-medium leading-normal text-white">
               {toSentenceCase(section.title)}
             </h2>
-            <SectionContent section={section} />
+            <div className="flex-1">
+              <SectionContent section={section} />
+            </div>
           </section>
         ))}
       </div>

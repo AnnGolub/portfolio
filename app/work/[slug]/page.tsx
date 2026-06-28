@@ -43,6 +43,9 @@ export default function CaseStudyPage({ params }: PageProps) {
     caseStudy.stats,
   );
 
+  const mobileImage = caseStudy.image;
+  const desktopImage = caseStudy.desktopPageImage ?? caseStudy.image;
+
   return (
     <PageShell tone="base" caseStudy innerClassName="max-w-[1296px]">
       <CaseStudyTopBar />
@@ -51,14 +54,22 @@ export default function CaseStudyPage({ params }: PageProps) {
         {caseStudy.title}
       </h1>
 
-      {caseStudy.image ? (
+      {/* Mobile image */}
+      {mobileImage && (
         <img
-          src={caseStudy.image}
+          src={mobileImage}
           alt=""
-          className="mt-6 w-full rounded-[16px] object-cover"
+          className="mt-6 w-full rounded-[16px] object-cover lg:hidden"
         />
-      ) : (
-        <div className="mt-6 h-60 w-full rounded-none bg-[#1a1a1a]" aria-hidden />
+      )}
+
+      {/* Desktop image */}
+      {desktopImage && (
+        <img
+          src={desktopImage}
+          alt=""
+          className="mt-6 hidden w-full rounded-[16px] object-cover lg:block"
+        />
       )}
 
       <CaseStudyLinks links={liveLinks} />
