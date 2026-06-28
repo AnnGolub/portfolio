@@ -154,6 +154,7 @@ Active for 6+ months with no major revisions needed.`,
     slug: "basket",
     image: "/testdesign1NEW.jpg",
     desktopImage: "/D_PicNew-3.jpg",
+    desktopProjectImages: ["/BaskertProject1.jpg", "/BaskertProject2.jpg", "/BaskertProject3.jpg"],
     category: "Fintech & Research",
     description:
       "Iterative redesign of a debit card application flow with cross-sell basket",
