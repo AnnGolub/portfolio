@@ -28,7 +28,7 @@ export function CaseStudyStats({ stats }: CaseStudyStatsProps) {
   if (stats.length === 0) return null;
 
   return (
-    <section aria-label="Key metrics" className="mt-12">
+    <section aria-label="Key metrics" className="mt-12 lg:mt-[128px]">
       {/* Mobile */}
       <div className="lg:hidden">
         <StatsList stats={stats} />
@@ -36,10 +36,10 @@ export function CaseStudyStats({ stats }: CaseStudyStatsProps) {
 
       {/* Desktop: two-column */}
       <div className="hidden lg:flex lg:items-start lg:gap-6">
-        <h2 className="w-[420px] shrink-0 text-[47px] font-medium leading-normal text-white">
+        <h2 className="w-[636px] shrink-0 text-[47px] font-medium leading-normal text-white">
           Impact
         </h2>
-        <div className="flex-1">
+        <div className="w-[636px] shrink-0">
           <StatsList stats={stats} />
         </div>
       </div>

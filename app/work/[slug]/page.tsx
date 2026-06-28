@@ -21,30 +21,16 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: PageProps): Metadata {
   const caseStudy = getCaseBySlug(params.slug);
-  if (!caseStudy) {
-    return { title: "Case study" };
-  }
-  return {
-    title: caseStudy.title,
-    description: caseStudy.description,
-  };
+  if (!caseStudy) return { title: "Case study" };
+  return { title: caseStudy.title, description: caseStudy.description };
 }
 
 export default function CaseStudyPage({ params }: PageProps) {
   const caseStudy = getCaseBySlug(params.slug);
-
-  if (!caseStudy) {
-    notFound();
-  }
+  if (!caseStudy) notFound();
 
   const liveLinks = getCaseStudyLiveLinks(caseStudy.content);
-  const displayStats = getCaseStudyDisplayStats(
-    caseStudy.slug,
-    caseStudy.stats,
-  );
-
-  const mobileImage = caseStudy.image;
-  const desktopImage = caseStudy.desktopPageImage ?? caseStudy.image;
+  const displayStats = getCaseStudyDisplayStats(caseStudy.slug, caseStudy.stats);
 
   return (
     <PageShell tone="base" caseStudy innerClassName="max-w-[1296px]">
@@ -54,29 +40,45 @@ export default function CaseStudyPage({ params }: PageProps) {
         {caseStudy.title}
       </h1>
 
-      {/* Mobile image */}
-      {mobileImage && (
+      {/* Mobile: single image */}
+      {caseStudy.image && (
         <img
-          src={mobileImage}
+          src={caseStudy.image}
           alt=""
           className="mt-6 w-full rounded-[16px] object-cover lg:hidden"
         />
       )}
 
-      {/* Desktop image */}
-      {desktopImage && (
-        <img
-          src={desktopImage}
-          alt=""
-          className="mt-6 hidden w-full rounded-[16px] object-cover lg:block"
-        />
+      {/* Desktop: 3 project images (384×654 each × 3 + 2×72px gap = 1296px) */}
+      {caseStudy.desktopProjectImages && caseStudy.desktopProjectImages.length > 0 ? (
+        <div className="mt-6 hidden lg:flex lg:gap-[72px]">
+          {caseStudy.desktopProjectImages.map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt=""
+              className="h-[654px] w-[384px] shrink-0 rounded-[16px] object-cover"
+            />
+          ))}
+        </div>
+      ) : (
+        caseStudy.desktopPageImage && (
+          <img
+            src={caseStudy.desktopPageImage}
+            alt=""
+            className="mt-6 hidden w-full rounded-[16px] object-cover lg:block"
+          />
+        )
       )}
 
       <CaseStudyLinks links={liveLinks} />
 
       <CaseStudyStats stats={displayStats} />
 
-      <TabbedCaseStudyContent content={caseStudy.content} />
+      <TabbedCaseStudyContent
+        content={caseStudy.content}
+        hideDesktopVideos={caseStudy.slug === "metals"}
+      />
     </PageShell>
   );
 }

@@ -24,7 +24,7 @@ export function CaseStudyLinks({ links }: CaseStudyLinksProps) {
   );
 
   return (
-    <section className="mt-12">
+    <section className="mt-12 lg:mt-[128px]">
       {/* Mobile */}
       <div className="lg:hidden">
         <p className="text-sm font-normal leading-[18px] text-[#525252]">links</p>
@@ -33,10 +33,10 @@ export function CaseStudyLinks({ links }: CaseStudyLinksProps) {
 
       {/* Desktop: two-column */}
       <div className="hidden lg:flex lg:items-start lg:gap-6">
-        <h2 className="w-[420px] shrink-0 text-[47px] font-medium leading-normal text-white">
+        <h2 className="w-[636px] shrink-0 text-[47px] font-medium leading-normal text-white">
           Links
         </h2>
-        <div className="flex-1">{linkList}</div>
+        <div className="w-[636px] shrink-0">{linkList}</div>
       </div>
     </section>
   );

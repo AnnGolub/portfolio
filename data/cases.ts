@@ -12,6 +12,7 @@ export type CaseStudy = {
   desktopImage: string;
   mobileVideo?: string;
   desktopPageImage?: string;
+  desktopProjectImages?: string[];
   category: string;
   description: string;
   tags: string[];
@@ -27,6 +28,7 @@ export const cases: CaseStudy[] = [
     image: "/Pic.jpg",
     desktopImage: "/D_PicNew-2.jpg",
     desktopPageImage: "/MetalsD.jpg",
+    desktopProjectImages: ["/MetallsProject1.jpg", "/MetallsProject2.jpg", "/MetallsProject3.jpg"],
     category: "Fintech & E-Commerce",
     description:
       "Designing a new digital sales channel for precious metals from zero",
@@ -95,6 +97,7 @@ LIVE
     image: "/Pic-1.jpg",
     desktopImage: "/D_PicNew-1.jpg",
     desktopPageImage: "/DesignD.jpg",
+    desktopProjectImages: ["/DesignProject1.jpg", "/DesignProject2.jpg", "/DesignProject3.jpg"],
     category: "Systems & Leadership",
     description:
       "Building a design process framework for a team of 30+ designers",

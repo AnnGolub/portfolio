@@ -12,7 +12,7 @@ function toSentenceCase(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
-function renderParagraph(paragraph: string, index: number) {
+function renderParagraph(paragraph: string, index: number, opts: { hideVideos?: boolean; desktop?: boolean } = {}) {
   if (paragraph.startsWith("[IMAGE:") && paragraph.endsWith("]")) {
     const filename = paragraph.slice(7, -1);
     return (
@@ -23,9 +23,10 @@ function renderParagraph(paragraph: string, index: number) {
   }
 
   if (paragraph.startsWith("[VIDEO:") && paragraph.endsWith("]")) {
+    if (opts.hideVideos) return null;
     const filename = paragraph.slice(7, -1);
     return (
-      <div key={index} className="mt-6 -mx-2">
+      <div key={index} className="mt-6 -mx-2 lg:mx-0">
         <video src={`/${filename}`} className="w-full" autoPlay muted loop playsInline />
       </div>
     );
@@ -45,32 +46,41 @@ function renderParagraph(paragraph: string, index: number) {
   }
 
   if (paragraph.startsWith("* ")) {
+    const textClass = opts.desktop
+      ? "text-[24px] font-normal leading-normal text-white/60"
+      : "text-[18px] font-normal leading-6 text-white/60";
     return (
       <div key={index} className="flex gap-3">
-        <span className="mt-[2px] shrink-0 text-[18px] font-normal leading-6 text-white/60">•</span>
-        <p className="text-[18px] font-normal leading-6 text-white/60">{paragraph.slice(2)}</p>
+        <span className={`mt-[2px] shrink-0 ${textClass}`}>•</span>
+        <p className={textClass}>{paragraph.slice(2)}</p>
       </div>
     );
   }
 
+  const textClass = opts.desktop
+    ? "text-[24px] font-normal leading-normal text-white/60"
+    : "text-[18px] font-normal leading-6 text-white/60";
+
   return (
-    <p key={index} className="text-[18px] font-normal leading-6 text-white/60">
+    <p key={index} className={textClass}>
       {paragraph}
     </p>
   );
 }
 
-function SectionContent({ section }: { section: CaseSection }) {
+function SectionContent({ section, hideVideos, desktop }: { section: CaseSection; hideVideos?: boolean; desktop?: boolean }) {
   return (
     <div className="space-y-4">
-      {splitSectionParagraphs(section.body).map((p, i) => renderParagraph(p, i))}
+      {splitSectionParagraphs(section.body).map((p, i) =>
+        renderParagraph(p, i, { hideVideos, desktop })
+      )}
     </div>
   );
 }
 
-type Props = { content: string };
+type Props = { content: string; hideDesktopVideos?: boolean };
 
-export function TabbedCaseStudyContent({ content }: Props) {
+export function TabbedCaseStudyContent({ content, hideDesktopVideos }: Props) {
   const { sections } = parseCaseContent(content);
   const contentSections = sections.filter((s) => s.title !== "LIVE");
   const [activeIdx, setActiveIdx] = useState(0);
@@ -79,7 +89,6 @@ export function TabbedCaseStudyContent({ content }: Props) {
     <>
       {/* Mobile: tabs */}
       <div className="lg:hidden">
-        {/* Tab bar — breaks out of px-2 page padding to go edge-to-edge */}
         <div className="mt-12 -mx-2">
           <div
             className="overflow-x-auto px-2"
@@ -96,42 +105,32 @@ export function TabbedCaseStudyContent({ content }: Props) {
                     onClick={() => setActiveIdx(i)}
                     className="flex flex-col items-start gap-[10px]"
                   >
-                    <span
-                      className={`whitespace-nowrap text-[16px] font-normal leading-6 ${
-                        active ? "text-white" : "text-white/60"
-                      }`}
-                    >
+                    <span className={`whitespace-nowrap text-[16px] font-normal leading-6 ${active ? "text-white" : "text-white/60"}`}>
                       {toSentenceCase(section.title)}
                     </span>
-                    <div
-                      className={`h-[2px] w-full rounded-t-[1px] ${
-                        active ? "bg-white" : "bg-transparent"
-                      }`}
-                    />
+                    <div className={`h-[2px] w-full rounded-t-[1px] ${active ? "bg-white" : "bg-transparent"}`} />
                   </button>
                 );
               })}
             </div>
           </div>
-          {/* Divider — full width, edge to edge */}
           <div className="h-px bg-white" style={{ opacity: 0.1 }} />
         </div>
 
-        {/* Active tab content */}
         <div className="mt-12">
           <SectionContent section={contentSections[activeIdx]} />
         </div>
       </div>
 
-      {/* Desktop: two-column layout */}
+      {/* Desktop: two-column 636px + 24px + 636px, 128px between blocks */}
       <div className="hidden lg:block">
         {contentSections.map((section) => (
-          <section key={section.title} className="mt-12 flex items-start gap-6">
-            <h2 className="w-[420px] shrink-0 text-[47px] font-medium leading-normal text-white">
+          <section key={section.title} className="mt-[128px] flex items-start gap-6">
+            <h2 className="w-[636px] shrink-0 text-[47px] font-medium leading-normal text-white">
               {toSentenceCase(section.title)}
             </h2>
-            <div className="flex-1">
-              <SectionContent section={section} />
+            <div className="w-[636px] shrink-0">
+              <SectionContent section={section} hideVideos={hideDesktopVideos} desktop />
             </div>
           </section>
         ))}
