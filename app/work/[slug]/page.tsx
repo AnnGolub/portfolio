@@ -36,7 +36,8 @@ export default function CaseStudyPage({ params }: PageProps) {
     <PageShell tone="base" caseStudy innerClassName="max-w-[1296px]">
       <CaseStudyTopBar />
 
-      <h1 className="mt-6 text-[47px] font-medium leading-normal text-white">
+      {/* Title: mobile only */}
+      <h1 className="mt-6 text-[47px] font-medium leading-normal text-white lg:hidden">
         {caseStudy.title}
       </h1>
 
@@ -49,9 +50,9 @@ export default function CaseStudyPage({ params }: PageProps) {
         />
       )}
 
-      {/* Desktop: 3 project images (384×654 each × 3 + 2×72px gap = 1296px) */}
+      {/* Desktop: 3 project images (384×654 each × 3 + 2×72px gap = 1296px), 72px below header */}
       {caseStudy.desktopProjectImages && caseStudy.desktopProjectImages.length > 0 ? (
-        <div className="mt-6 hidden lg:flex lg:gap-[72px]">
+        <div className="mt-[72px] hidden lg:flex lg:gap-[72px]">
           {caseStudy.desktopProjectImages.map((src, i) => (
             <img
               key={i}
@@ -66,7 +67,7 @@ export default function CaseStudyPage({ params }: PageProps) {
           <img
             src={caseStudy.desktopPageImage}
             alt=""
-            className="mt-6 hidden w-full rounded-[16px] object-cover lg:block"
+            className="mt-[72px] hidden w-full rounded-[16px] object-cover lg:block"
           />
         )
       )}

@@ -9,7 +9,7 @@ export function CaseStudyTopBar() {
   const { openModal } = useLetsTalkModal();
 
   return (
-    <div className="mt-12 flex items-center justify-between">
+    <div className="mt-12 flex items-center justify-between lg:mt-0 lg:py-6">
       <button
         type="button"
         onClick={() => router.back()}
