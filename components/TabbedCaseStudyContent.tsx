@@ -28,24 +28,22 @@ function renderParagraph(
   }
 
   if (paragraph.startsWith("[IMAGES_M:") && paragraph.endsWith("]")) {
-    if (opts.desktop) return null;
-    const files = paragraph.slice(10, -1).split(",");
-    return (
+    const files = paragraph.slice(10, -1).split(",").map((f) => f.trim());
+    return opts.desktop ? null : (
       <div key={index} className="flex flex-col gap-6">
         {files.map((f) => (
-          <img key={f} src={`/${f.trim()}`} alt="" className="w-full rounded-[16px] object-cover" />
+          <img key={f} src={`/${f}`} alt="" className="w-full rounded-[16px] object-cover" />
         ))}
       </div>
     );
   }
 
   if (paragraph.startsWith("[IMAGES_D:") && paragraph.endsWith("]")) {
-    if (!opts.desktop) return null;
-    const files = paragraph.slice(10, -1).split(",");
-    return (
+    const files = paragraph.slice(10, -1).split(",").map((f) => f.trim());
+    return !opts.desktop ? null : (
       <div key={index} className="flex flex-col gap-6">
         {files.map((f) => (
-          <img key={f} src={`/${f.trim()}`} alt="" className="w-full rounded-[16px] object-cover" />
+          <img key={f} src={`/${f}`} alt="" className="w-full rounded-[16px] object-cover" />
         ))}
       </div>
     );

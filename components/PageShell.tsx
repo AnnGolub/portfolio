@@ -25,7 +25,7 @@ export function PageShell({
 
   return (
     <div
-      className={`min-h-screen w-full overflow-x-hidden ${layoutClasses} ${tones[tone]} ${className}`}
+      className={`min-h-screen w-full ${caseStudy ? "" : "overflow-x-hidden"} ${layoutClasses} ${tones[tone]} ${className}`}
     >
       <div className={`mx-auto w-full ${innerClassName}`}>{children}</div>
     </div>
