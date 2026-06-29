@@ -18,17 +18,7 @@ export function VideoWithLoader({ src, className, style }: Props) {
     >
       {!loaded && (
         <div className="absolute inset-0 flex items-center justify-center">
-          {/* CSS spinner — shows instantly, no network */}
-          <div className="absolute h-6 w-6 animate-spin rounded-full border-2 border-white/20 border-t-white/80" />
-          {/* Loader.mp4 overlays the spinner once it loads */}
-          <video
-            src="/Loader.mp4"
-            className="relative h-6 w-6"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
+          <img src="/Loader.svg" alt="" className="h-6 w-6" />
         </div>
       )}
       <video
