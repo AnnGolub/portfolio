@@ -18,7 +18,7 @@ export function VideoWithLoader({ src, className, style }: Props) {
     >
       {!loaded && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <img src="/Loader.svg" alt="" className="h-6 w-6" />
+          <object data="/Loader.svg" type="image/svg+xml" className="h-6 w-6 pointer-events-none" aria-hidden="true" />
         </div>
       )}
       <video
