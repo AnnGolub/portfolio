@@ -192,6 +192,8 @@ Step 3: customer reviews full order and awaits delivery.
 
 Physical products handed over at delivery. Non-physical products set up by bank employee during in-person meeting — reducing that meeting time by an average of 3 minutes.
 
+[VIDEO:BasketVideoMob.mov]
+
 HOW IT EVOLVED
 September 2023 — business arrived with an enormous wishlist. We made an early mistake: jumped into concept development before aligning on scope or timeline.
 Lesson: never start designing without a confirmed scope, a realistic timeline, and a proper brief.
