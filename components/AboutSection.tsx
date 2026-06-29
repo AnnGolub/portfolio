@@ -4,7 +4,7 @@ import { useState } from "react";
 import { site } from "@/data/site";
 
 const aboutText =
-  "I grew up in Saint Petersburg and trained as a ballet dancer before finding my way into product design. Turns out choreography and UX have more in common than you'd think — both are about guiding people through an experience without them noticing the work behind it\n\n5+ years in IT, the last 3 at Alfa-Bank as a Senior Product Designer on the business product team — also leading the design system's widget library (quality, Figma library, dev handoff), with 220 widgets and components shipped to Storybook last year alongside engineering";
+  "I grew up in Saint Petersburg and trained as a ballet dancer before finding my way into product design. Turns out choreography and UX have more in common than you'd think — both are about guiding people through an experience without them noticing the work behind it\n\n5+ years in IT, the last 3 at Alfa-Bank as a Senior Product Designer on the business product team — shipping product alongside leading the design system and the processes that keep the design team aligned and moving";
 
 function ContactIcons() {
   const [copied, setCopied] = useState(false);
