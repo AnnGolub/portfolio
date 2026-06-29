@@ -13,14 +13,17 @@ export function VideoWithLoader({ src, className, style }: Props) {
 
   return (
     <div
-      className="relative"
-      style={{ ...style, minHeight: loaded ? undefined : 200 }}
+      className={`relative${!loaded ? " min-h-[200px] bg-[#1a1a1a]" : ""}`}
+      style={style}
     >
       {!loaded && (
         <div className="absolute inset-0 flex items-center justify-center">
+          {/* CSS spinner — shows instantly, no network */}
+          <div className="absolute h-6 w-6 animate-spin rounded-full border-2 border-white/20 border-t-white/80" />
+          {/* Loader.mp4 overlays the spinner once it loads */}
           <video
             src="/Loader.mp4"
-            className="h-8 w-8"
+            className="relative h-6 w-6"
             autoPlay
             muted
             loop
@@ -35,7 +38,7 @@ export function VideoWithLoader({ src, className, style }: Props) {
         muted
         loop
         playsInline
-        onCanPlay={() => setLoaded(true)}
+        onPlaying={() => setLoaded(true)}
       />
     </div>
   );
