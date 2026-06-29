@@ -142,6 +142,10 @@ Useful links library — a curated reference hub with everything designers and c
 
 Marketing-specific process diagram — a dedicated flow diagram created to align with the marketing team on design stages, addressing the specific chaos marketing requests introduced into the workflow.
 
+PROCESS MATERIALS
+[IMAGES_M:MMaterial1.jpg,MMaterial2.jpg,MMaterial3.jpg,MMaterial4.jpg]
+[IMAGES_D:DMaterial1.jpg,DMaterial2.jpg,DMaterial3.jpg,DMaterial4.jpg]
+
 OUTCOME
 Framework adopted across all 24 product teams, 30 designers.
 
