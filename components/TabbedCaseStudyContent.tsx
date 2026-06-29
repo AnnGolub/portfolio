@@ -113,12 +113,6 @@ function SectionContent({
   );
 }
 
-function hasImages(section: CaseSection): boolean {
-  return splitSectionParagraphs(section.body).some(
-    (p) => p.startsWith("[IMAGES_M:") || p.startsWith("[IMAGES_D:") || p.startsWith("[IMAGE:")
-  );
-}
-
 type Props = { content: string; hideDesktopVideos?: boolean };
 
 export function TabbedCaseStudyContent({ content, hideDesktopVideos }: Props) {
@@ -174,25 +168,18 @@ export function TabbedCaseStudyContent({ content, hideDesktopVideos }: Props) {
         </div>
       </div>
 
-      {/* Desktop: two-column 636px + 24px + 636px, 128px between blocks */}
+      {/* Desktop: two-column 636px + 24px + 636px, 128px between blocks, headings sticky */}
       <div className="hidden lg:block">
-        {contentSections.map((section) => {
-          const sticky = hasImages(section);
-          return (
-            <section key={section.title} className="mt-[128px] flex items-start gap-6">
-              <h2
-                className={`w-[636px] shrink-0 text-[47px] font-medium leading-normal text-white${
-                  sticky ? " sticky top-0 self-start" : ""
-                }`}
-              >
-                {toSentenceCase(section.title)}
-              </h2>
-              <div className="w-[636px] shrink-0">
-                <SectionContent section={section} hideVideos={hideDesktopVideos} desktop />
-              </div>
-            </section>
-          );
-        })}
+        {contentSections.map((section) => (
+          <section key={section.title} className="mt-[128px] flex items-start gap-6">
+            <h2 className="sticky top-0 w-[636px] shrink-0 self-start text-[47px] font-medium leading-normal text-white">
+              {toSentenceCase(section.title)}
+            </h2>
+            <div className="w-[636px] shrink-0">
+              <SectionContent section={section} hideVideos={hideDesktopVideos} desktop />
+            </div>
+          </section>
+        ))}
       </div>
     </>
   );

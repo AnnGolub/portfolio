@@ -202,11 +202,7 @@ Early 2024 — added cashback category selector. Shipped. Still no meaningful me
 
 Mid 2024 — team expanded with marketing, researchers, motional designer. 2 design directions tested with 5 respondents each. Result: users on both variants skipped the card design and cashback selection entirely, jumping straight to form submission.
 
-[HEADING:1st design for test]
-
 [VIDEO:TestVideo1.mov]
-
-[HEADING:2nd design for test]
 
 [VIDEO:TestVideo2.mov]
 
