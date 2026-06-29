@@ -78,7 +78,7 @@ export default function CaseStudyPage({ params }: PageProps) {
 
       <TabbedCaseStudyContent
         content={caseStudy.content}
-        hideDesktopVideos={caseStudy.slug === "metals"}
+        hideDesktopVideos={caseStudy.slug === "metals" || caseStudy.slug === "basket"}
       />
     </PageShell>
   );

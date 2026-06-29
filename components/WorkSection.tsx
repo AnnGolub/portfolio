@@ -82,12 +82,23 @@ export function WorkSection({ cases, onLetsTalkClick }: WorkSectionProps) {
                 href={`/work/${caseStudy.slug}`}
                 className="block cursor-pointer transition-transform duration-300 hover:scale-105"
               >
-                <img
-                  src={caseStudy.desktopImage}
-                  alt=""
-                  className="h-auto w-full rounded-[16px] object-cover"
-                  aria-hidden
-                />
+                {caseStudy.desktopVideo ? (
+                  <video
+                    src={caseStudy.desktopVideo}
+                    className="h-auto w-full rounded-[16px] object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                ) : (
+                  <img
+                    src={caseStudy.desktopImage}
+                    alt=""
+                    className="h-auto w-full rounded-[16px] object-cover"
+                    aria-hidden
+                  />
+                )}
                 <div className="mt-2 flex items-end justify-between gap-2">
                   <span className="min-w-0 flex-1 whitespace-pre-line text-[24px] font-normal leading-normal text-white">
                     {caseStudy.mobileTitle}

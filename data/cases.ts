@@ -11,6 +11,7 @@ export type CaseStudy = {
   image: string;
   desktopImage: string;
   mobileVideo?: string;
+  desktopVideo?: string;
   desktopPageImage?: string;
   desktopProjectImages?: string[];
   category: string;
@@ -26,6 +27,8 @@ export const cases: CaseStudy[] = [
     mobileTitle: "Precious metals\nstorefront",
     slug: "metals",
     image: "/Pic.jpg",
+    mobileVideo: "/VideoMetalM.mp4",
+    desktopVideo: "/VideoMetalD.mp4",
     desktopImage: "/D_PicNew-2.jpg",
     desktopPageImage: "/MetalsD.jpg",
     desktopProjectImages: ["/MetallsProject1.jpg", "/MetallsProject2.jpg", "/MetallsProject3.jpg"],
@@ -93,6 +96,8 @@ LIVE
     mobileTitle: "Unified design\nprocess",
     slug: "design-process",
     image: "/Pic-1.jpg",
+    mobileVideo: "/VideoProcessM.mp4",
+    desktopVideo: "/VideoProcessD.mp4",
     desktopImage: "/D_PicNew-1.jpg",
     desktopPageImage: "/DesignD.jpg",
     desktopProjectImages: ["/DesignProject1.jpg", "/DesignProject2.jpg", "/DesignProject3.jpg"],
@@ -153,6 +158,8 @@ Active for 6+ months with no major revisions needed.`,
     mobileTitle: "Product basket\nform",
     slug: "basket",
     image: "/testdesign1NEW.jpg",
+    mobileVideo: "/VideoBaketM.mp4",
+    desktopVideo: "/VideoBasketD.mp4",
     desktopImage: "/D_PicNew-3.jpg",
     desktopProjectImages: ["/BaskertProject1.jpg", "/BaskertProject2.jpg", "/BaskertProject3.jpg"],
     category: "Fintech & Research",
@@ -207,15 +214,15 @@ Autumn 2024 — A/B test on 43% of mobile traffic. Results: no drop in conversio
 January 2025 — built full-scope target version, ran another usability test, addressed remaining issues, shipped. Desktop version designed and launched shortly after.
 
 OUTCOME
-* Basket live on production across mobile and desktop. No conversion loss during rollout
+Basket live on production across mobile and desktop. No conversion loss during rollout
 
-* 10% of users actively engage with basket
+10% of users actively engage with basket
 
-* 38.75% of orders converted to activation — across 10 products and 47,800+ orders
+38.75% of orders converted to activation — across 10 products and 47,800+ orders
 
-* ~3 minutes saved per courier meeting
+~3 minutes saved per courier meeting
 
-* 3 usability tests across 2 years shaped a significantly more usable final product
+3 usability tests across 2 years shaped a significantly more usable final product
 
 LIVE
 - Product Basket (Alfa-Card application): https://alfabank.ru/everyday/debit-cards/alfacard/`,
