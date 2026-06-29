@@ -6,35 +6,11 @@ import {
   splitSectionParagraphs,
   type CaseSection,
 } from "@/lib/parseCaseContent";
+import { VideoWithLoader } from "@/components/VideoWithLoader";
 
 function toSentenceCase(str: string): string {
   if (!str) return str;
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-}
-
-function VideoWithLoader({ src, fullBleed }: { src: string; fullBleed?: boolean }) {
-  const [loaded, setLoaded] = useState(false);
-
-  return (
-    <div className={`relative${fullBleed ? " -mx-2 lg:mx-0" : ""}`}>
-      {/* Placeholder shown while loading */}
-      {!loaded && (
-        <div
-          className="absolute inset-0 animate-pulse rounded-none bg-[#1a1a1a]"
-          style={{ minHeight: 320 }}
-        />
-      )}
-      <video
-        src={src}
-        className={`w-full transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
-        autoPlay
-        muted
-        loop
-        playsInline
-        onCanPlay={() => setLoaded(true)}
-      />
-    </div>
-  );
 }
 
 function renderParagraph(
@@ -56,8 +32,8 @@ function renderParagraph(
     const filename = paragraph.slice(7, -1);
     return (
       // Use inline style marginTop to override space-y-4 and get exact 48px
-      <div key={index} style={{ marginTop: 48 }}>
-        <VideoWithLoader src={`/${filename}`} fullBleed />
+      <div key={index} className="-mx-2 lg:mx-0" style={{ marginTop: 48 }}>
+        <VideoWithLoader src={`/${filename}`} />
       </div>
     );
   }

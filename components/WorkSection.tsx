@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LetsTalkLink } from "@/components/LetsTalkLink";
+import { VideoWithLoader } from "@/components/VideoWithLoader";
 import type { CaseStudy } from "@/data/cases";
 
 type WorkSectionProps = {
@@ -28,13 +29,9 @@ export function WorkSection({ cases, onLetsTalkClick }: WorkSectionProps) {
             >
               <div className="px-2">
                 {caseStudy.mobileVideo ? (
-                  <video
+                  <VideoWithLoader
                     src={caseStudy.mobileVideo}
-                    className="h-auto w-full rounded-[16px] object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
+                    className="rounded-[16px]"
                   />
                 ) : (
                   <img
@@ -83,13 +80,9 @@ export function WorkSection({ cases, onLetsTalkClick }: WorkSectionProps) {
                 className="block cursor-pointer transition-transform duration-300 hover:scale-105"
               >
                 {caseStudy.desktopVideo ? (
-                  <video
+                  <VideoWithLoader
                     src={caseStudy.desktopVideo}
-                    className="h-auto w-full rounded-[16px] object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
+                    className="rounded-[16px]"
                   />
                 ) : (
                   <img
