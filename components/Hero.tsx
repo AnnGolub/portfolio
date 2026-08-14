@@ -12,12 +12,16 @@ export function Hero({ onLetsTalkClick }: HeroProps) {
       {/* Mobile */}
       <div className="relative h-[100dvh] lg:hidden">
         <MobileHeroNav onLetsTalkClick={onLetsTalkClick} />
-        <img
-          src="/MainBanner.jpg"
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover object-top"
-          aria-hidden
-        />
+        <picture className="absolute inset-0 h-full w-full">
+          <source media="(min-width: 1024px)" srcSet="/MainNew.png" />
+          <img
+            src="/MainBanner.jpg"
+            alt=""
+            className="h-full w-full object-cover object-top"
+            aria-hidden
+            fetchPriority="high"
+          />
+        </picture>
         <div className="absolute bottom-2 left-0 right-0 z-10 px-2">
           <h1 className="hero-mobile-name text-center text-[47px] font-medium leading-normal text-white">
             {site.name}
@@ -28,12 +32,16 @@ export function Hero({ onLetsTalkClick }: HeroProps) {
       {/* Desktop */}
       <div className="hidden lg:block lg:w-[1296px]">
         <div className="h-[654px] w-full">
-          <img
-            src="/MainNew.png"
-            alt=""
-            className="h-full w-full object-cover"
-            aria-hidden
-          />
+          <picture className="h-full w-full">
+            <source media="(min-width: 1024px)" srcSet="/MainNew.png" />
+            <img
+              src="/MainBanner.jpg"
+              alt=""
+              className="h-full w-full object-cover"
+              aria-hidden
+              fetchPriority="high"
+            />
+          </picture>
         </div>
 
         <div className="mt-[72px] flex flex-col items-center gap-6">

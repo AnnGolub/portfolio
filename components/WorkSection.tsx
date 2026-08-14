@@ -39,6 +39,7 @@ export function WorkSection({ cases, onLetsTalkClick }: WorkSectionProps) {
                     alt=""
                     className="h-auto w-full rounded-[16px] object-cover"
                     aria-hidden
+                    loading="lazy"
                   />
                 )}
               </div>
@@ -90,6 +91,7 @@ export function WorkSection({ cases, onLetsTalkClick }: WorkSectionProps) {
                     alt=""
                     className="h-auto w-full rounded-[16px] object-cover"
                     aria-hidden
+                    loading="lazy"
                   />
                 )}
                 <div className="mt-2 flex items-end justify-between gap-2">

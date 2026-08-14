@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { loaderSVG } from "@/components/LoaderSVG";
+import { useEffect, useRef, useState } from "react";
 
 type Props = {
   src: string;
@@ -10,31 +9,50 @@ type Props = {
 };
 
 export function VideoWithLoader({ src, className, style }: Props) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeSrc, setActiveSrc] = useState<string | null>(null);
   const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    // Only assign src when element is actually visible (display:none sections never fire)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setActiveSrc(src);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "150px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [src]);
 
   return (
     <div
+      ref={containerRef}
       className={`relative${!loaded ? " min-h-[200px] bg-[#1a1a1a]" : ""}`}
       style={style}
     >
-      {!loaded && (
+      {activeSrc && !loaded && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div
-            className="h-6 w-6 pointer-events-none"
-            aria-hidden="true"
-            dangerouslySetInnerHTML={{ __html: loaderSVG }}
-          />
+          <div className="h-6 w-6 animate-spin rounded-full border-2 border-white/20 border-t-white/80" />
         </div>
       )}
-      <video
-        src={src}
-        className={`w-full transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"} ${className ?? ""}`}
-        autoPlay
-        muted
-        loop
-        playsInline
-        onPlaying={() => setLoaded(true)}
-      />
+      {activeSrc && (
+        <video
+          src={activeSrc}
+          className={`w-full transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"} ${className ?? ""}`}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          onPlaying={() => setLoaded(true)}
+        />
+      )}
     </div>
   );
 }

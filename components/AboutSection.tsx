@@ -29,6 +29,7 @@ function ContactIcons() {
           width={44}
           height={44}
           alt="Email"
+          loading="lazy"
           className="h-11 w-11 object-contain"
         />
       </button>
@@ -43,6 +44,7 @@ function ContactIcons() {
           width={44}
           height={44}
           alt="Telegram"
+          loading="lazy"
           className="h-11 w-11 object-contain"
         />
       </a>
@@ -57,6 +59,7 @@ function ContactIcons() {
           width={44}
           height={44}
           alt="LinkedIn"
+          loading="lazy"
           className="h-11 w-11 object-contain"
         />
       </a>
@@ -71,6 +74,7 @@ function ContactIcons() {
           width={44}
           height={44}
           alt="Behance"
+          loading="lazy"
           className="h-11 w-11 object-contain"
         />
       </a>
