@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { HashScrollOnLoad } from "@/components/HashScrollOnLoad";
 import { Header } from "@/components/Header";
 import { LetsTalkModalProvider } from "@/components/LetsTalkModalProvider";
 import { SmoothScroll } from "@/components/SmoothScroll";
@@ -28,6 +29,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <LetsTalkModalProvider>
+          <HashScrollOnLoad />
           <SmoothScroll />
           <Header />
           <main>{children}</main>

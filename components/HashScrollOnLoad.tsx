@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { getLenis, isMobileViewport, scrollToAnchor } from "@/lib/lenis";
 
 const LEGACY_HASH_MAP: Record<string, string> = {
@@ -13,6 +14,8 @@ function resolveHash(rawHash: string) {
 }
 
 export function HashScrollOnLoad() {
+  const pathname = usePathname();
+
   useEffect(() => {
     // Prevent browser from restoring scroll position on reload
     if ("scrollRestoration" in history) {
@@ -23,6 +26,9 @@ export function HashScrollOnLoad() {
       const rawHash = window.location.hash.replace("#", "");
       if (!rawHash) {
         window.scrollTo(0, 0);
+        // Lenis keeps its own virtual scroll offset — reset it too,
+        // otherwise a route change lands mid-page on mobile.
+        getLenis()?.scrollTo(0, { immediate: true });
         return;
       }
 
@@ -46,7 +52,8 @@ export function HashScrollOnLoad() {
     scrollToHash();
     window.addEventListener("hashchange", scrollToHash);
     return () => window.removeEventListener("hashchange", scrollToHash);
-  }, []);
+    // Re-run on every route change, not just first mount
+  }, [pathname]);
 
   return null;
 }
