@@ -132,7 +132,7 @@ export default function LetsTalkModal({ isOpen, onClose }: LetsTalkModalProps) {
           aria-label="Close"
           className="absolute right-10 top-10 flex h-8 w-8 min-h-8 min-w-8 items-center justify-center rounded-full bg-[#525252] p-0 transition-opacity hover:opacity-80"
         >
-          <img src="/icons/Close.svg" width={16} height={16} alt="" />
+          <img src="/icons/DCross.svg" width={16} height={16} alt="" />
         </button>
 
         <div className="flex flex-col items-start p-10">
