@@ -1,6 +1,9 @@
 "use client";
 
-import { letsTalkButtonClassName } from "@/components/LetsTalkLink";
+import {
+  desktopLetsTalkButtonClassName,
+  letsTalkButtonClassName,
+} from "@/components/LetsTalkLink";
 import { useLetsTalkModal } from "@/components/LetsTalkModalProvider";
 import { useRouter } from "next/navigation";
 
@@ -22,7 +25,14 @@ export function CaseStudyTopBar() {
       <button
         type="button"
         onClick={openModal}
-        className={letsTalkButtonClassName}
+        className={`${letsTalkButtonClassName} lg:hidden`}
+      >
+        Let&apos;s talk
+      </button>
+      <button
+        type="button"
+        onClick={openModal}
+        className={`hidden ${desktopLetsTalkButtonClassName} lg:flex`}
       >
         Let&apos;s talk
       </button>
