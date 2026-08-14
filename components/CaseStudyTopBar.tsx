@@ -17,7 +17,7 @@ export function CaseStudyTopBar() {
         type="button"
         onClick={() => router.back()}
         aria-label="Go back"
-        className="flex h-8 w-8 min-h-8 min-w-8 items-center justify-center rounded-full bg-[#525252] p-0 transition-opacity hover:opacity-80"
+        className="flex h-8 w-8 min-h-8 min-w-8 items-center justify-center rounded-full bg-[#212121] p-0 transition-opacity hover:opacity-80"
       >
         <img src="/icons/BackArrow.svg" alt="" width={24} height={24} className="h-6 w-6 object-contain" />
       </button>
