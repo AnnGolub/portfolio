@@ -28,7 +28,7 @@ export function CaseStudyLinks({ links }: CaseStudyLinksProps) {
       </div>
 
       {/* Desktop: two-column */}
-      <div className="hidden lg:flex lg:items-start lg:gap-6">
+      <div className="hidden lg:flex lg:items-center lg:gap-6">
         <h2 className="w-[636px] shrink-0 text-[47px] font-medium leading-normal text-white">
           Links
         </h2>
