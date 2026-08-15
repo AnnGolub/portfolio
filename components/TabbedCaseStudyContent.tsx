@@ -128,6 +128,7 @@ export function TabbedCaseStudyContent({ content, hideDesktopVideos }: Props) {
           <div
             className="overflow-x-auto px-2"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            data-lenis-prevent
           >
             <style>{`.tab-scroll::-webkit-scrollbar { display: none; }`}</style>
             <div
